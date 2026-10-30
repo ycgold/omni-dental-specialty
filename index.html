@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omni Pearl and Gold</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a quiet contents page. Four groups of page cards, each card a cropped screenshot of the real page above its name. */
+:root{
+  --pearl:#F5F2EC;
+  --card:#FFFFFF;
+  --graphite:#252525;
+  --ink-soft:#5A5A5A;
+  --gold:#C4A768;
+  --gold-text:#6E501A;
+  --line:#DDD6C8;
+  --focus:#6E501A;
+  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --pearl:#171717;--card:#222222;--graphite:#F2EEE6;--ink-soft:#B9B3A7;--gold:#C4A768;--gold-text:#D8BE86;--line:#383530;--focus:#D8BE86;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --pearl:#171717;--card:#222222;--graphite:#F2EEE6;--ink-soft:#B9B3A7;--gold:#C4A768;--gold-text:#D8BE86;--line:#383530;--focus:#D8BE86;color-scheme:dark;
+}
+body{
+  background:var(--pearl);color:var(--graphite);font-family:var(--font-body);font-size:16px;line-height:1.6;
+  padding-block:56px 72px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:1120px;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin:0 0 20px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{font-family:var(--font-display);font-weight:500;font-size:clamp(40px,7vw,72px);line-height:1.02;margin:0 0 20px;text-wrap:balance}
+h1 em{font-style:italic;color:var(--gold-text)}
+.lede{max-width:60ch;color:var(--ink-soft);font-size:18px;margin:0 0 24px}
+.notes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 56px;padding:0;list-style:none}
+.notes li{font-size:13px;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--card)}
+.group{margin:0 0 56px}
+.group h2{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,3.4vw,34px);line-height:1.1;margin:0 0 6px}
+.group .sub{margin:0 0 22px;color:var(--ink-soft);font-size:15px;max-width:62ch}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.page{flex:0 1 calc((100% - 40px)/3);min-width:min(100%,280px);display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.page:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.14);border-color:var(--gold)}
+.page:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shot{aspect-ratio:560/410;overflow:hidden;background:var(--line);border-bottom:1px solid var(--line)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.meta .name{font-family:var(--font-display);font-size:23px;font-weight:600;line-height:1.15}
+.meta .what{font-size:14px;color:var(--ink-soft)}
+.meta .file{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-top:6px}
+.foot{border-top:1px solid var(--line);padding-top:28px;color:var(--ink-soft);font-size:14px;max-width:72ch}
+.foot p{margin:0 0 10px}
+.foot strong{color:var(--graphite);font-weight:600}
+@media (max-width:900px){.page{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:620px){.page{flex-basis:100%}body{padding-block:36px 56px}}
+@media (prefers-reduced-motion:reduce){.page{transition:none}.page:hover{transform:none}}
+</style>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">Omni Dental Specialty, Oxnard</p>
+  <h1>Pearl and gold, <em>every page</em></h1>
+  <p class="lede">The client chose Direction D. Here is the full set of 13 pages built in it, so the whole site can be reviewed in one pass before the build starts.</p>
+  <ul class="notes">
+    <li>Best on a desktop browser, where the scroll animations run</li>
+    <li>Links to pages not built yet go nowhere</li>
+    <li>Forms are for show and send nothing</li>
+  </ul>
+
+  <section class="group" aria-labelledby="g-main">
+    <h2 id="g-main">Home and services</h2>
+    <p class="sub">The homepage, the services list, and two service pages that use the same template.</p>
+    <div class="grid">
+      <a class="page" href="home.html"><div class="shot"><img src="thumbs/home.jpg" width="560" height="410" alt="Top of the homepage" loading="lazy"></div><div class="meta"><span class="name">Homepage</span><span class="what">Hero, services, the dentist, reviews area, contact</span><span class="file">home.html</span></div></a>
+      <a class="page" href="services.html"><div class="shot"><img src="thumbs/services.jpg" width="560" height="410" alt="Top of the services page" loading="lazy"></div><div class="meta"><span class="name">All services</span><span class="what">Twelve photo cards in two groups, first visit steps</span><span class="file">services.html</span></div></a>
+      <a class="page" href="service-implants.html"><div class="shot"><img src="thumbs/service-implants.jpg" width="560" height="410" alt="Top of the dental implants page" loading="lazy"></div><div class="meta"><span class="name">Dental implants</span><span class="what">The master service page layout</span><span class="file">service-implants.html</span></div></a>
+      <a class="page" href="service-general-dentistry.html"><div class="shot"><img src="thumbs/service-general-dentistry.jpg" width="560" height="410" alt="Top of the general dentistry page" loading="lazy"></div><div class="meta"><span class="name">General dentistry</span><span class="what">Same template, new content only</span><span class="file">service-general-dentistry.html</span></div></a>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g-loc">
+    <h2 id="g-loc">Where we are</h2>
+    <p class="sub">One office, with a page for the areas around it.</p>
+    <div class="grid">
+      <a class="page" href="locations.html"><div class="shot"><img src="thumbs/locations.jpg" width="560" height="410" alt="Top of the areas we serve page" loading="lazy"></div><div class="meta"><span class="name">Areas we serve</span><span class="what">Office, map, form, links to area pages</span><span class="file">locations.html</span></div></a>
+      <a class="page" href="area-el-rio.html"><div class="shot"><img src="thumbs/area-el-rio.jpg" width="560" height="410" alt="Top of the El Rio area page" loading="lazy"></div><div class="meta"><span class="name">El Rio area page</span><span class="what">Also the layout for College Park</span><span class="file">area-el-rio.html</span></div></a>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g-prac">
+    <h2 id="g-prac">The practice</h2>
+    <p class="sub">About, the dentist, contact and patient stories.</p>
+    <div class="grid">
+      <a class="page" href="about.html"><div class="shot"><img src="thumbs/about.jpg" width="560" height="410" alt="Top of the about page" loading="lazy"></div><div class="meta"><span class="name">About</span><span class="what">The office, a visit in four steps, affiliations</span><span class="file">about.html</span></div></a>
+      <a class="page" href="our-doctors.html"><div class="shot"><img src="thumbs/our-doctors.jpg" width="560" height="410" alt="Top of the dentist page" loading="lazy"></div><div class="meta"><span class="name">Our dentist</span><span class="what">One dentist, portrait, credentials, team photo</span><span class="file">our-doctors.html</span></div></a>
+      <a class="page" href="contact.html"><div class="shot"><img src="thumbs/contact.jpg" width="560" height="410" alt="Top of the contact page" loading="lazy"></div><div class="meta"><span class="name">Contact</span><span class="what">Hours, form and map in one layout</span><span class="file">contact.html</span></div></a>
+      <a class="page" href="testimonials.html"><div class="shot"><img src="thumbs/testimonials.jpg" width="560" height="410" alt="Top of the patient stories page" loading="lazy"></div><div class="meta"><span class="name">Patient stories</span><span class="what">Empty slots only, until stories are approved</span><span class="file">testimonials.html</span></div></a>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g-read">
+    <h2 id="g-read">Reading pages</h2>
+    <p class="sub">The blog list, one article, and the plain text page used for financing, privacy and terms.</p>
+    <div class="grid">
+      <a class="page" href="blog.html"><div class="shot"><img src="thumbs/blog.jpg" width="560" height="410" alt="Top of the blog page" loading="lazy"></div><div class="meta"><span class="name">Blog</span><span class="what">Featured article, filter chips, article cards</span><span class="file">blog.html</span></div></a>
+      <a class="page" href="blog-post.html"><div class="shot"><img src="thumbs/blog-post.jpg" width="560" height="410" alt="Top of the sample blog article" loading="lazy"></div><div class="meta"><span class="name">Sample article</span><span class="what">Contents list, key takeaway, sources, FAQ</span><span class="file">blog-post.html</span></div></a>
+      <a class="page" href="financing.html"><div class="shot"><img src="thumbs/financing.jpg" width="560" height="410" alt="Top of the financing page" loading="lazy"></div><div class="meta"><span class="name">Financing and payment</span><span class="what">Plain text page template with a side card</span><span class="file">financing.html</span></div></a>
+    </div>
+  </section>
+
+  <div class="foot">
+    <p><strong>Placeholders.</strong> Wording marked CLIENT TO CONFIRM or TBD is waiting on the practice: accepted insurance, affiliations, patient stories, financing and a logo.</p>
+    <p><strong>Not yet confirmed by the client.</strong> The phone number, address and hours come from the current website. The sample article is a draft and is not published.</p>
+    <p><strong>Photos.</strong> Office and team photos are frames from the practice's own video and the dentist portrait comes from the practice's site. Implant, instrument and room photos are free stock images used as stand-ins. Originals and permission from anyone shown are still needed.</p>
+    <p>Draft design for internal review. Nothing here is on the live site.</p>
+  </div>
+</div>
+
+</body>
+</html>
