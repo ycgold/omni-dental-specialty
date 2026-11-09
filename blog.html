@@ -32,7 +32,27 @@
 <!-- Mobile nav overlay -->
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
   <a href="home.html" onclick="closeMobileNav()">Home</a>
-  <a href="services.html" onclick="closeMobileNav()">Services</a>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-row">
+      <a href="services.html" onclick="closeMobileNav()">Services</a>
+      <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobileServices" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+    </div>
+    <ul class="mobile-nav-sub" id="mobileServices" role="list" hidden>
+    <li><a href="service-implants.html" onclick="closeMobileNav()">Dental Implants</a></li>
+    <li><a href="service-general-dentistry.html" onclick="closeMobileNav()">General Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Veneers</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Invisalign</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Cosmetic Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Teeth Whitening</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Gum Disease Treatment</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Root Canal</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Emergency Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">TMJ Therapy</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Wisdom Teeth</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Dental Crowns</a></li>
+      <li><a href="services.html" onclick="closeMobileNav()">All services</a></li>
+    </ul>
+  </div>
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="locations.html" onclick="closeMobileNav()">Find Us</a>
   <a href="contact.html" onclick="closeMobileNav()">Contact</a>
@@ -58,13 +78,34 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-links" role="list">
           <li><a href="home.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li class="nav-item has-menu">
+            <a href="services.html">Services</a>
+            <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="servicesMenu" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+            <div class="nav-menu" id="servicesMenu" role="group" aria-label="Dental services">
+              <p class="nav-menu-title">Dental Services in Oxnard</p>
+              <ul class="nav-menu-list" role="list">
+                  <li><a href="service-implants.html">Dental Implants</a></li>
+                  <li><a href="service-general-dentistry.html">General Dentistry</a></li>
+                  <li><a href="#">Veneers</a></li>
+                  <li><a href="#">Invisalign</a></li>
+                  <li><a href="#">Cosmetic Dentistry</a></li>
+                  <li><a href="#">Teeth Whitening</a></li>
+                  <li><a href="#">Gum Disease Treatment</a></li>
+                  <li><a href="#">Root Canal</a></li>
+                  <li><a href="#">Emergency Dentistry</a></li>
+                  <li><a href="#">TMJ Therapy</a></li>
+                  <li><a href="#">Wisdom Teeth</a></li>
+                  <li><a href="#">Dental Crowns</a></li>
+              </ul>
+              <a class="nav-menu-all" href="services.html">All services <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </li>
           <li><a href="about.html">About</a></li>
           <li><a href="locations.html">Find Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="#book" class="btn btn-gold">Request a Visit</a>
-      </nav>
+        </nav>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
         <span></span><span></span><span></span>
       </button>

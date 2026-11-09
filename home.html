@@ -12,7 +12,7 @@
 
 <meta name="robots" content="noindex,nofollow">
 </head>
-<body>
+<body class="page-home">
 <noscript></noscript>
 
 <!-- Skip link -->
@@ -33,7 +33,27 @@
 <!-- Mobile nav overlay -->
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
   <a href="home.html" aria-current="page" onclick="closeMobileNav()">Home</a>
-  <a href="services.html" onclick="closeMobileNav()">Services</a>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-row">
+      <a href="services.html" onclick="closeMobileNav()">Services</a>
+      <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobileServices" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+    </div>
+    <ul class="mobile-nav-sub" id="mobileServices" role="list" hidden>
+    <li><a href="service-implants.html" onclick="closeMobileNav()">Dental Implants</a></li>
+    <li><a href="service-general-dentistry.html" onclick="closeMobileNav()">General Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Veneers</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Invisalign</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Cosmetic Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Teeth Whitening</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Gum Disease Treatment</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Root Canal</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Emergency Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">TMJ Therapy</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Wisdom Teeth</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Dental Crowns</a></li>
+      <li><a href="services.html" onclick="closeMobileNav()">All services</a></li>
+    </ul>
+  </div>
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="locations.html" onclick="closeMobileNav()">Find Us</a>
   <a href="contact.html" onclick="closeMobileNav()">Contact</a>
@@ -46,7 +66,7 @@
 <header id="site-header" class="site-header" role="banner">
   <div class="container">
     <div class="header-inner">
-      <a href="#" class="site-logo" aria-label="Omni Dental Specialty home">
+      <a href="home.html" class="site-logo" aria-label="Omni Dental Specialty home">
         <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="18" cy="18" r="17" stroke="#C9A84C" stroke-width="1.2"/>
           <path d="M12 14c0-2.5 1.5-4.5 6-4.5s6 2 6 4.5c0 1.5-.5 2.8-1 3.5-.8 1-1.5 2.5-1.5 4.5v1c0 .6-.4 1-1 1h-5c-.6 0-1-.4-1-1v-1c0-2-.7-3.5-1.5-4.5-.5-.7-1-2-1-3.5z" fill="#C9A84C" opacity="0.85"/>
@@ -59,13 +79,34 @@
             <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-links" role="list">
           <li><a href="home.html" aria-current="page">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li class="nav-item has-menu">
+            <a href="services.html">Services</a>
+            <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="servicesMenu" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+            <div class="nav-menu" id="servicesMenu" role="group" aria-label="Dental services">
+              <p class="nav-menu-title">Dental Services in Oxnard</p>
+              <ul class="nav-menu-list" role="list">
+                  <li><a href="service-implants.html">Dental Implants</a></li>
+                  <li><a href="service-general-dentistry.html">General Dentistry</a></li>
+                  <li><a href="#">Veneers</a></li>
+                  <li><a href="#">Invisalign</a></li>
+                  <li><a href="#">Cosmetic Dentistry</a></li>
+                  <li><a href="#">Teeth Whitening</a></li>
+                  <li><a href="#">Gum Disease Treatment</a></li>
+                  <li><a href="#">Root Canal</a></li>
+                  <li><a href="#">Emergency Dentistry</a></li>
+                  <li><a href="#">TMJ Therapy</a></li>
+                  <li><a href="#">Wisdom Teeth</a></li>
+                  <li><a href="#">Dental Crowns</a></li>
+              </ul>
+              <a class="nav-menu-all" href="services.html">All services <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </li>
           <li><a href="about.html">About</a></li>
           <li><a href="locations.html">Find Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="#book" class="btn btn-gold">Request a Visit</a>
-      </nav>
+        </nav>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -78,74 +119,55 @@
      ============================================================== -->
 <main id="main-content">
 
-<!-- ── HERO ──────────────────────────────────────────────────────── -->
-<section id="hero" class="hero-section" aria-labelledby="hero-heading">
-  <div class="hero-content">
-    <span class="hero-eyebrow">Oxnard, California</span>
-    <h1 class="hero-heading" id="hero-heading">
-      Dental Care<br><em>Worth Smiling About</em>
-    </h1>
-    <p class="hero-sub">
-      Omni Dental Specialty brings general and cosmetic dental care to Oxnard and the surrounding communities. We take the time to understand your goals before recommending anything.
-    </p>
-    <div class="hero-actions">
-      <a href="#book" class="btn btn-gold btn-lg">Request an Appointment</a>
-      <a href="#services" class="btn btn-outline btn-lg">View Services</a>
+<!-- ── HERO: dark pinned opener (motion rework 2026-11-05) ───────── -->
+<div class="home-hero-pin">
+  <section id="hero" class="home-hero" aria-labelledby="hero-heading">
+    <div class="home-stage" aria-hidden="true">
+      <div class="home-stage-photo">
+        <img src="assets/waiting-room.jpg"
+          alt=""
+          width="1600" height="1066"
+          fetchpriority="high"
+          loading="eager">
+      </div>
     </div>
-  </div>
-  <div class="hero-photo-panel" aria-hidden="true">
-    <img src="assets/waiting-room.jpg"
-      alt="Bright, welcoming dental waiting area"
-      width="1600" height="1066"
-      fetchpriority="high"
-      loading="eager">
-  </div>
-</section>
-
-<!-- ── CHAMPAGNE RIBBON ──────────────────────────────────────────── -->
-<div class="ribbon-strip" aria-hidden="true">
-  <div class="ribbon-inner">
-    <span class="ribbon-item">General Dentistry</span>
-    <span class="ribbon-item">Cosmetic Dentistry</span>
-    <span class="ribbon-item">Oxnard, CA</span>
-    <span class="ribbon-item">Serving El Rio and College Park</span>
-    <span class="ribbon-item">Call (805) 366-6000</span>
-  </div>
+    <div class="container home-hero-copy">
+      <span class="hero-eyebrow home-hero-eyebrow">Oxnard, California</span>
+      <h1 class="hero-heading home-hero-h1" id="hero-heading">Dental Care<br><em>Worth Smiling About</em></h1>
+      <p class="hero-sub home-hero-sub">
+        Omni Dental Specialty brings general and cosmetic dental care to Oxnard and the surrounding communities. We take the time to understand your goals before recommending anything.
+      </p>
+      <div class="hero-actions home-hero-actions">
+        <a href="#book" class="btn btn-gold btn-lg">Request an Appointment</a>
+        <a href="#services" class="btn btn-outline-light btn-lg">View Services</a>
+      </div>
+    </div>
+    <aside class="home-hero-card" aria-label="Office at a glance">
+      <span class="home-hero-card-k">Our Oxnard Office</span>
+      <p class="home-hero-card-line">1690 E. Gonzales Road<br>Oxnard, CA 93036</p>
+      <a href="tel:+18053666000" class="home-hero-card-phone">(805) 366-6000</a>
+      <p class="home-hero-card-hours">Mon to Fri 9 am to 5 pm, Sat by appointment</p>
+    </aside>
+  </section>
 </div>
 
-<!-- ── WHY CHOOSE US ──────────────────────────────────────────────── -->
-<section class="why-us-section" aria-label="Why choose Omni Dental Specialty">
-  <div class="container">
-    <div class="why-us-grid">
-
-      <div class="why-us-item reveal">
-        <span class="why-us-medallion" aria-hidden="true"><svg class="why-us-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="28" cy="22" r="10"/>
-          <path d="M10 46c0-10 8-16 18-16s18 6 18 16"/>
-        </svg></span>
-        <h3>Personalized Care</h3>
-        <p>We review your history and listen to your goals before discussing any treatment. You decide what comes next.</p>
-      </div>
-
-      <div class="why-us-item reveal">
-        <span class="why-us-medallion" aria-hidden="true"><svg class="why-us-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M8 16h40M8 28h28M8 40h20"/>
-          <circle cx="44" cy="38" r="8"/>
-          <path d="M40 38l3 3 5-5"/>
-        </svg></span>
-        <h3>Clear Communication</h3>
-        <p>We walk you through our findings in plain language. Plain language and clear options.</p>
-      </div>
-
-      <div class="why-us-item reveal">
-        <span class="why-us-medallion" aria-hidden="true"><svg class="why-us-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M28 10C16 10 10 18 10 26c0 6 4 12 10 15v5h16v-5c6-3 10-9 10-15 0-8-6-16-18-16z"/>
-          <path d="M22 46h12"/>
-        </svg></span>
-        <h3>Your Questions First</h3>
-        <p>Our dentist goes over your questions and options before any treatment. You decide what to do next.</p>
-      </div>
-
+<!-- ── OFFICE PHOTO STRIP ────────────────────────────────────────── -->
+<section id="inside" class="home-strip" aria-labelledby="strip-heading">
+  <div class="container home-strip-head reveal">
+    <span class="section-eyebrow">Inside the Office</span>
+    <h2 id="strip-heading">A Look Inside Our <em>Oxnard</em> Office</h2>
+  </div>
+  <div class="home-strip-rail">
+    <div class="home-strip-track">
+      <figure class="home-strip-photo home-strip-photo--a">
+        <img src="assets/waiting-room.jpg" alt="Dental office reception area" width="1600" height="1066" loading="lazy">
+      </figure>
+      <figure class="home-strip-photo home-strip-photo--b">
+        <img src="assets/operatory.jpg" alt="Dental treatment room with natural light" width="1600" height="1241" loading="lazy">
+      </figure>
+      <figure class="home-strip-photo home-strip-photo--c">
+        <img src="assets/exterior-cropped.jpg" alt="Front of the office building and sign on E. Gonzales Road" width="870" height="580" loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
@@ -331,6 +353,42 @@
   </div>
 </section>
 
+<!-- ── WHY US: sticky heading, numbered reasons ──────────────────── -->
+<section id="why-us" class="home-why" aria-labelledby="why-heading">
+  <div class="container home-why-inner">
+    <div class="home-why-side">
+      <div class="home-why-sticky reveal">
+        <span class="section-eyebrow">Why Patients Choose Us</span>
+        <h2 id="why-heading">Why Choose Omni Dental Specialty in <em>Oxnard</em></h2>
+        <p>General and cosmetic dental care for adults and families, under one roof at 1690 E. Gonzales Road.</p>
+        <a href="#book" class="btn btn-gold btn-lg">Request a Visit</a>
+      </div>
+    </div>
+    <ol class="home-why-list" role="list">
+      <li class="home-why-item reveal" role="listitem">
+        <span class="home-why-num" aria-hidden="true">1</span>
+        <h3>Personalized Care</h3>
+        <p>We review your history and listen to your goals before discussing any treatment. You decide what comes next.</p>
+      </li>
+      <li class="home-why-item reveal" role="listitem">
+        <span class="home-why-num" aria-hidden="true">2</span>
+        <h3>Clear Communication</h3>
+        <p>We walk you through our findings in plain language, with clear options.</p>
+      </li>
+      <li class="home-why-item reveal" role="listitem">
+        <span class="home-why-num" aria-hidden="true">3</span>
+        <h3>Your Questions First</h3>
+        <p>Our dentist goes over your questions and options before any treatment. You decide what to do next.</p>
+      </li>
+      <li class="home-why-item reveal" role="listitem">
+        <span class="home-why-num" aria-hidden="true">4</span>
+        <h3>A Clear Process</h3>
+        <p>We keep the process clear so you know what happens at each stage before you arrive. Follow-up visits are scheduled based on your needs.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- ── DOCTOR BIO ────────────────────────────────────────────────── -->
 <section id="about-dentist" class="doctor-section" aria-labelledby="doctor-heading">
   <div class="container">
@@ -363,81 +421,85 @@
   </div>
 </section>
 
-<!-- ── WHAT TO EXPECT ─────────────────────────────────────────────── -->
-<section id="your-visit" class="steps-section" aria-labelledby="steps-heading">
-  <div class="container">
-    <div class="section-header-center reveal">
-      <span class="section-eyebrow" style="justify-content:center">What to Expect</span>
-      <h2 id="steps-heading">Your Visit, Step by Step</h2>
-      <p>We keep the process clear so you know what happens at each stage before you arrive.</p>
-    </div>
-    <div class="steps-grid" role="list">
-
-      <div class="step-card active-step reveal" role="listitem">
-        <div class="step-num">Step 01</div>
-        <div class="step-title">Call or Book Online</div>
-        <p class="step-body">Contact us at <strong>(805) 366-6000</strong> or use the request form below. A member of our team will confirm your appointment and answer any questions before you arrive.</p>
+<!-- ── FIRST VISIT: dial on desktop, static steps elsewhere ──────── -->
+<section id="your-visit" class="home-journey" aria-labelledby="steps-heading">
+  <div class="home-journey-pin">
+    <div class="home-journey-stage">
+      <div class="container">
+        <div class="home-journey-head reveal">
+          <span class="section-eyebrow section-eyebrow--light">What to Expect</span>
+          <h2 id="steps-heading">Your Visit, <em>Step by Step</em></h2>
+          <p>We keep the process clear so you know what happens at each stage before you arrive.</p>
+        </div>
       </div>
-
-      <div class="step-card reveal" role="listitem">
-        <div class="step-num">Step 02</div>
-        <div class="step-title">Exam and Records</div>
-        <p class="step-body">On your first visit we review your dental history, take records, and conduct a thorough exam. We want a complete picture before recommending anything.</p>
+      <div class="home-dial" aria-hidden="true"><div class="home-dial-wheel"></div></div>
+      <div class="container">
+        <ol class="home-jsteps" role="list">
+          <li class="home-jstep" role="listitem">
+            <span class="home-jstep-num">Step 01</span>
+            <h3 class="home-jstep-title">Call or Book Online</h3>
+            <p class="home-jstep-body">Contact us at <strong>(805) 366-6000</strong> or use the request form below. A member of our team will confirm your appointment and answer any questions before you arrive.</p>
+          </li>
+          <li class="home-jstep" role="listitem">
+            <span class="home-jstep-num">Step 02</span>
+            <h3 class="home-jstep-title">Exam and Records</h3>
+            <p class="home-jstep-body">On your first visit we review your dental history, take records, and conduct a thorough exam. We want a complete picture before recommending anything.</p>
+          </li>
+          <li class="home-jstep" role="listitem">
+            <span class="home-jstep-num">Step 03</span>
+            <h3 class="home-jstep-title">Your Plan Explained</h3>
+            <p class="home-jstep-body">We walk you through our findings in plain language. You decide what to move forward with and when.</p>
+          </li>
+          <li class="home-jstep" role="listitem">
+            <span class="home-jstep-num">Step 04</span>
+            <h3 class="home-jstep-title">Ongoing Care</h3>
+            <p class="home-jstep-body">We schedule follow-up visits based on your needs and remain available to answer questions throughout your care.</p>
+          </li>
+        </ol>
       </div>
-
-      <div class="step-card reveal" role="listitem">
-        <div class="step-num">Step 03</div>
-        <div class="step-title">Your Plan Explained</div>
-        <p class="step-body">We walk you through our findings in plain language. You decide what to move forward with and when. You decide what comes next.</p>
-      </div>
-
-      <div class="step-card reveal" role="listitem">
-        <div class="step-num">Step 04</div>
-        <div class="step-title">Ongoing Care</div>
-        <p class="step-body">We schedule follow-up visits based on your needs and remain available to answer questions throughout your care.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── AFFILIATIONS ──────────────────────────────────────────────── -->
-<section id="affiliations" class="affiliations-section" aria-labelledby="affiliations-heading">
-  <div class="container">
-    <div class="affiliations-header reveal">
-      <span class="section-eyebrow" style="justify-content:center">Professional Memberships</span>
-      <h2 id="affiliations-heading">Affiliations</h2>
-      <p>Professional memberships and associations are pending confirmation from the practice.</p>
+<!-- ── EMERGENCY + INSURANCE BAND ────────────────────────────────── -->
+<section id="emergency-insurance" class="home-band" aria-labelledby="band-heading">
+  <div class="container home-band-inner">
+    <div class="home-band-copy reveal">
+      <span class="section-eyebrow section-eyebrow--light">Emergencies and Insurance</span>
+      <h2 id="band-heading">Tooth pain or a broken tooth? <em>Call the office.</em></h2>
+      <p>Call us to describe your situation. You can also read about <a href="#" title="Emergency Dentistry page [coming soon]">emergency dentistry</a> at the Oxnard office.</p>
+      <div class="home-band-actions">
+        <a href="tel:+18053666000" class="btn btn-gold btn-lg">(805) 366-6000</a>
+        <a href="#" class="btn btn-outline-light btn-lg" title="Emergency Dentistry page [coming soon]">Emergency Dentistry</a>
+      </div>
     </div>
-    <div class="logo-slots reveal" role="list" aria-label="Affiliation logo placeholders">
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 1"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 2"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 3"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 4"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 5"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Affiliation logo placeholder 6"><span class="logo-slot-label">LOGO TBD</span></div>
+    <div class="home-band-cards">
+      <div class="home-band-card reveal">
+        <p class="home-band-k">Accepted Insurances</p>
+        <p class="home-band-tbd">[ACCEPTED INSURANCES TBD: client to confirm]</p>
+        <p class="home-band-s">Call the office to ask about your plan.</p>
+      </div>
+      <div class="home-band-card reveal">
+        <p class="home-band-k">Affiliations</p>
+        <p class="home-band-tbd">[AFFILIATIONS TBD: client to confirm]</p>
+      </div>
     </div>
-    <p class="tbd-note">[AFFILIATIONS TBD: client to confirm]</p>
   </div>
 </section>
 
-<!-- ── ACCEPTED INSURANCES ──────────────────────────────────────── -->
-<section id="insurances" class="insurances-section affiliations-section" aria-labelledby="insurances-heading">
-  <div class="container">
-    <div class="affiliations-header reveal">
-      <span class="section-eyebrow" style="justify-content:center">Insurance</span>
-      <h2 id="insurances-heading">Accepted Insurances</h2>
-      <p>Accepted insurance plans are pending confirmation from the practice. Call the office to ask about your plan.</p>
+<!-- ── AREAS ─────────────────────────────────────────────────────── -->
+<section id="areas" class="home-areas" aria-labelledby="areas-heading">
+  <div class="container home-areas-inner">
+    <div class="home-areas-copy reveal">
+      <span class="section-eyebrow">Areas We Serve</span>
+      <h2 id="areas-heading">Serving Oxnard and <em>Nearby Communities</em></h2>
+      <p>From the office at 1690 E. Gonzales Road, we see patients from across Oxnard, including El Rio and College Park.</p>
     </div>
-    <div class="logo-slots reveal" role="list" aria-label="Insurance logo placeholders">
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 1"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 2"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 3"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 4"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 5"><span class="logo-slot-label">LOGO TBD</span></div>
-      <div class="logo-slot" role="listitem" aria-label="Insurance logo placeholder 6"><span class="logo-slot-label">LOGO TBD</span></div>
-    </div>
-    <p class="tbd-note">[ACCEPTED INSURANCES TBD: client to confirm]</p>
+    <ul class="home-area-links reveal" role="list">
+      <li><a href="area-el-rio.html">El Rio</a></li>
+      <li><a href="locations.html">College Park</a></li>
+      <li><a href="locations.html" class="home-area-all">All areas we serve</a></li>
+    </ul>
   </div>
 </section>
 
@@ -507,7 +569,7 @@
 
     <!-- Left col bottom: getting here, map embed, directions -->
     <div class="contact-map-col reveal">
-      <p class="contact-getting-here">We serve patients from Oxnard, including <a href="#">El Rio</a> and <a href="#">College Park</a>.</p>
+      <p class="contact-getting-here">We serve patients from Oxnard, including <a href="area-el-rio.html">El Rio</a> and <a href="locations.html">College Park</a>.</p>
       
       <img class="map-fallback" src="assets/map-office-1200x520.jpg" alt="Map showing the office on E. Gonzales Road, Oxnard" width="1200" height="520">
       <a href="https://maps.google.com/?q=1690+E+Gonzales+Road+Oxnard+CA+93036" target="_blank" rel="noopener noreferrer" class="contact-directions">
@@ -523,7 +585,7 @@
 <section id="faq" class="faq-section" aria-labelledby="faq-heading">
   <div class="container">
     <div class="faq-inner">
-      <!-- Left: intro + booking card -->
+      <!-- Left: intro + booking card (sticky on desktop, home only) -->
       <div class="faq-left reveal">
         <span class="section-eyebrow">Common Questions</span>
         <h2 id="faq-heading">Frequently Asked Questions</h2>
@@ -595,7 +657,7 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="faq4-answer" role="region" aria-labelledby="faq4-btn" hidden>
-            Our office is located at 1690 E. Gonzales Road in Oxnard. We also serve patients from the <a href="#" title="El Rio area patients [page coming soon]">El Rio</a> and <a href="#" title="College Park area patients [page coming soon]">College Park</a> communities.
+            Our office is located at 1690 E. Gonzales Road in Oxnard. We also serve patients from the <a href="area-el-rio.html">El Rio</a> and <a href="locations.html">College Park</a> communities.
           </div>
         </div>
 
@@ -614,6 +676,22 @@
   </div>
 </section>
 
+<!-- ── END BAND (dark, before footer) ────────────────────────────── -->
+<section id="cta" class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div class="cta-band-content reveal">
+      <span class="section-eyebrow section-eyebrow--light">Schedule Your Visit</span>
+      <h2 id="cta-heading">Ready to<br><em>Get Started?</em></h2>
+      <p>Serving Oxnard at 1690 E. Gonzales Road. Call or send a request and we will reach out to confirm your time.</p>
+      <div class="cta-actions">
+        <a href="tel:+18053666000" class="btn btn-gold btn-lg">(805) 366-6000</a>
+        <a href="#book" class="btn btn-outline-light btn-lg">Send a Request</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
 
 </main><!-- /#main-content -->
 

@@ -30,7 +30,27 @@
 
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
   <a href="home.html" onclick="closeMobileNav()">Home</a>
-  <a href="services.html" aria-current="page" onclick="closeMobileNav()">Services</a>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-row">
+      <a href="services.html" aria-current="page" onclick="closeMobileNav()">Services</a>
+      <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobileServices" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+    </div>
+    <ul class="mobile-nav-sub" id="mobileServices" role="list" hidden>
+    <li><a href="service-implants.html" aria-current="page" onclick="closeMobileNav()">Dental Implants</a></li>
+    <li><a href="service-general-dentistry.html" onclick="closeMobileNav()">General Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Veneers</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Invisalign</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Cosmetic Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Teeth Whitening</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Gum Disease Treatment</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Root Canal</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Emergency Dentistry</a></li>
+    <li><a href="#" onclick="closeMobileNav()">TMJ Therapy</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Wisdom Teeth</a></li>
+    <li><a href="#" onclick="closeMobileNav()">Dental Crowns</a></li>
+      <li><a href="services.html" onclick="closeMobileNav()">All services</a></li>
+    </ul>
+  </div>
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="locations.html" onclick="closeMobileNav()">Find Us</a>
   <a href="contact.html" onclick="closeMobileNav()">Contact</a>
@@ -56,13 +76,34 @@
             <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-links" role="list">
           <li><a href="home.html">Home</a></li>
-          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li class="nav-item has-menu">
+            <a href="services.html" aria-current="page">Services</a>
+            <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="servicesMenu" aria-label="Show all dental services"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+            <div class="nav-menu" id="servicesMenu" role="group" aria-label="Dental services">
+              <p class="nav-menu-title">Dental Services in Oxnard</p>
+              <ul class="nav-menu-list" role="list">
+                  <li><a href="service-implants.html" aria-current="page">Dental Implants</a></li>
+                  <li><a href="service-general-dentistry.html">General Dentistry</a></li>
+                  <li><a href="#">Veneers</a></li>
+                  <li><a href="#">Invisalign</a></li>
+                  <li><a href="#">Cosmetic Dentistry</a></li>
+                  <li><a href="#">Teeth Whitening</a></li>
+                  <li><a href="#">Gum Disease Treatment</a></li>
+                  <li><a href="#">Root Canal</a></li>
+                  <li><a href="#">Emergency Dentistry</a></li>
+                  <li><a href="#">TMJ Therapy</a></li>
+                  <li><a href="#">Wisdom Teeth</a></li>
+                  <li><a href="#">Dental Crowns</a></li>
+              </ul>
+              <a class="nav-menu-all" href="services.html">All services <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </li>
           <li><a href="about.html">About</a></li>
           <li><a href="locations.html">Find Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="#book" class="btn btn-gold">Request a Visit</a>
-      </nav>
+        </nav>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -129,10 +170,16 @@
           What Is a<br><em data-slot="what-is-h2-italic">Dental Implant?</em>
         </h2>
         <p data-slot="what-is-body-1">
-          A dental implant is a small titanium post placed into the jawbone to replace the root of a missing tooth. Once the area has healed, a custom crown is attached on top, creating a restoration that functions and looks similar to a natural tooth.
+          A dental implant replaces the root of a missing tooth. <a class="g2-inline-link" href="https://my.clevelandclinic.org/health/treatments/10903-dental-implants" target="_blank" rel="noopener">Cleveland Clinic</a> describes a threaded post placed in the jawbone that acts like an artificial tooth root, with a small connector called an abutment that extends slightly beyond the gums. The visible tooth on top, such as a crown, a bridge or an implant supported denture, is the restoration.
         </p>
         <p data-slot="what-is-body-2">
-          Implants are one option among several for replacing a missing tooth. During your consultation at Omni Dental Specialty, our dentist will review your dental history and discuss which approach fits your situation.
+          The American Dental Association's <a class="g2-inline-link" href="https://www.mouthhealthy.org/all-topics-a-z/implants" target="_blank" rel="noopener">MouthHealthy</a> site says treatment generally has three stages. The implant is placed surgically in the jaw, the bone grows around it during a healing period, and the replacement tooth is attached afterward. Cleveland Clinic calls this fusing of the jawbone to the implant osseointegration.
+        </p>
+        <p data-slot="what-is-body-3">
+          Implants are one option among several for replacing a missing tooth. The <a class="g2-inline-link" href="https://www.aaid-implant.org/dental-implants/" target="_blank" rel="noopener">American Academy of Implant Dentistry</a> says each patient's situation differs and that an initial consultation should produce a treatment plan. At <a class="g2-inline-link" href="home.html">Omni Dental Specialty in Oxnard</a>, your dentist reviews your history and talks through which approach may fit you.
+        </p>
+        <p data-slot="what-is-body-4">
+          This page is general information. Cleveland Clinic says a dentist is the only person who can tell you whether you are a candidate, so we begin with an exam and a conversation. We welcome patients from Oxnard, El Rio and College Park. You can read <a class="g2-inline-link" href="about.html">about our Oxnard dental office</a> or <a class="g2-inline-link" href="contact.html">contact us</a> to ask about a consultation.
         </p>
       </div>
       <div class="what-is-photo reveal" data-slot="what-is-photo">
@@ -146,35 +193,87 @@
   </div>
 </section>
 
+<!-- ── REASONS ────────────────────────────────────────────────────── -->
+<section id="considerations" class="reasons-section" aria-labelledby="reasons-heading">
+  <div class="container">
+    <div class="reasons-header reveal">
+      <span class="section-eyebrow section-eyebrow--light section-eyebrow--center" data-slot="reasons-eyebrow">What to Consider</span>
+      <h2 id="reasons-heading" data-slot="reasons-h2">Why Oxnard Patients Ask About Implants</h2>
+    </div>
+    <div class="reasons-grid" role="list">
+      <div class="reason-card reveal" role="listitem" data-slot="reason-1">
+        <div class="reason-num">01</div>
+        <div class="reason-title" data-slot="reason-1-title">Placed in the Jawbone</div>
+        <p class="reason-body" data-slot="reason-1-body">Cleveland Clinic describes the post as sitting in the jawbone and acting like an artificial tooth root. The restoration connects to the post through the abutment.</p>
+      </div>
+      <div class="reason-card reveal" role="listitem" data-slot="reason-2">
+        <div class="reason-num">02</div>
+        <div class="reason-title" data-slot="reason-2-title">Neighboring Teeth</div>
+        <p class="reason-body" data-slot="reason-2-body">Cleveland Clinic notes that a single tooth implant does not involve the neighboring teeth, while a traditional bridge requires shaving them down. Your dentist explains how this applies to you.</p>
+      </div>
+      <div class="reason-card reveal" role="listitem" data-slot="reason-3">
+        <div class="reason-num">03</div>
+        <div class="reason-title" data-slot="reason-3-title">A Custom Crown</div>
+        <p class="reason-body" data-slot="reason-3-body">For a single tooth implant, MouthHealthy says your dentist customizes a new tooth called a dental crown. Your dentist discusses the details at the consultation.</p>
+      </div>
+      <div class="reason-card reveal" role="listitem" data-slot="reason-4">
+        <div class="reason-num">04</div>
+        <div class="reason-title" data-slot="reason-4-title">More Than One Tooth</div>
+        <p class="reason-body" data-slot="reason-4-body">MouthHealthy says that when several teeth are missing, custom bridges or dentures are made to fit your mouth and your implants. Your dentist explains the options.</p>
+      </div>
+      <div class="reason-card reveal" role="listitem" data-slot="reason-5">
+        <div class="reason-num">05</div>
+        <div class="reason-title" data-slot="reason-5-title">Your Health History</div>
+        <p class="reason-body" data-slot="reason-5-body">Cleveland Clinic says a provider reviews your medical history carefully before suggesting implants. MouthHealthy says chronic conditions such as diabetes or leukemia may interfere with healing.</p>
+      </div>
+      <div class="reason-card reveal" role="listitem" data-slot="reason-6">
+        <div class="reason-num">06</div>
+        <div class="reason-title" data-slot="reason-6-title">Ongoing Care</div>
+        <p class="reason-body" data-slot="reason-6-body">Cleveland Clinic points to brushing, flossing and regular dental visits as part of caring for implants. Your dentist explains what ongoing care looks like for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── HOW IT WORKS ───────────────────────────────────────────────── -->
 <section id="how-it-works" class="steps-section" aria-labelledby="steps-heading">
   <div class="container">
     <div class="steps-header reveal">
       <span class="section-eyebrow section-eyebrow--center" data-slot="steps-eyebrow">The Process</span>
       <h2 id="steps-heading" data-slot="steps-h2">How Implants Work, Step by Step</h2>
-      <p data-slot="steps-intro">We walk you through each stage before any treatment begins so you know what to expect.</p>
+      <p data-slot="steps-intro">We walk you through each stage before any treatment begins so you know what to expect from your implant consultation in Oxnard.</p>
     </div>
-    <div class="steps-grid" role="list">
+    <div class="steps-grid r1b-reasons-grid" role="list">
       <!-- Steps can be expanded or reduced per service. Min 3, max 6. -->
       <div class="step-card reveal" role="listitem" data-slot="step-1">
         <div class="step-num">Step 01</div>
         <div class="step-title" data-slot="step-1-title">Consultation and Exam</div>
-        <p class="step-body" data-slot="step-1-body">We review your dental and health history, take records, and assess whether implants are an appropriate option for your situation.</p>
+        <p class="step-body" data-slot="step-1-body">We review your dental and health history and examine your mouth. Cleveland Clinic names enough healthy jawbone as the main requirement for an implant to take hold.</p>
       </div>
       <div class="step-card reveal" role="listitem" data-slot="step-2">
         <div class="step-num">Step 02</div>
         <div class="step-title" data-slot="step-2-title">Treatment Planning</div>
-        <p class="step-body" data-slot="step-2-body">If implants are a fit, we put together a plan and explain the timeline, what each appointment involves, and what to expect between visits.</p>
+        <p class="step-body" data-slot="step-2-body">The American Academy of Implant Dentistry says a consultation should produce a treatment plan with estimated timing. We explain what each appointment involves and what to expect between visits.</p>
       </div>
       <div class="step-card reveal" role="listitem" data-slot="step-3">
         <div class="step-num">Step 03</div>
-        <div class="step-title" data-slot="step-3-title">Implant Placement</div>
-        <p class="step-body" data-slot="step-3-body">The titanium post is placed into the jawbone. A healing period follows during which the implant integrates with the surrounding bone tissue.</p>
+        <div class="step-title" data-slot="step-3-title">Preparing the Jawbone</div>
+        <p class="step-body" data-slot="step-3-body">Cleveland Clinic says a provider may need to place bone grafts to build up places where there is bone loss. Your dentist tells you whether this applies to you.</p>
       </div>
       <div class="step-card reveal" role="listitem" data-slot="step-4">
         <div class="step-num">Step 04</div>
-        <div class="step-title" data-slot="step-4-title">Crown Placement</div>
-        <p class="step-body" data-slot="step-4-body">Once healing is complete, a custom crown is attached to the implant post. We check fit, bite, and appearance before you leave.</p>
+        <div class="step-title" data-slot="step-4-title">Implant Placement</div>
+        <p class="step-body" data-slot="step-4-body">MouthHealthy describes surgical placement of the post in the jaw as the first stage. Cleveland Clinic lists numbing medicine for the gums among the steps. [TBD: confirm with client which treatment steps take place at our office]</p>
+      </div>
+      <div class="step-card reveal" role="listitem" data-slot="step-5">
+        <div class="step-num">Step 05</div>
+        <div class="step-title" data-slot="step-5-title">Healing</div>
+        <p class="step-body" data-slot="step-5-body">MouthHealthy describes a healing period in which the bone grows around the implant, and says tobacco use can slow healing. Cleveland Clinic says your dentist may make a temporary tooth to wear until you heal.</p>
+      </div>
+      <div class="step-card reveal" role="listitem" data-slot="step-6">
+        <div class="step-num">Step 06</div>
+        <div class="step-title" data-slot="step-6-title">Attaching the New Tooth</div>
+        <p class="step-body" data-slot="step-6-body">Cleveland Clinic says the restoration is added once the implant has healed. Your dentist explains what your final tooth involves, such as a crown, a bridge or a denture.</p>
       </div>
     </div>
   </div>
@@ -189,35 +288,49 @@
       <div class="r1a-guide-head reveal">
         <span class="section-eyebrow" data-slot="guide-eyebrow">Good to Know</span>
         <h2 id="guide-heading" data-slot="guide-h2">A Closer Look at <em>Implant Care</em></h2>
-        <p data-slot="guide-intro">These general points can help you prepare for a consultation. Your dentist explains what applies to your situation.</p>
+        <p data-slot="guide-intro">These general points can help Oxnard patients prepare for a consultation. Your dentist explains what applies to your situation. You can also see <a class="g2-inline-link" href="services.html">all of our dental services in Oxnard</a>.</p>
       </div>
       <ol class="r1a-guide-list reveal" role="list" data-slot="guide-list">
         <li class="r1a-guide-item" data-slot="guide-block-1">
           <span class="r1a-guide-num" aria-hidden="true">01</span>
           <div>
-            <h3 class="r1a-guide-title" data-slot="guide-block-1-title">What is part of an implant restoration</h3>
-            <p class="r1a-guide-body" data-slot="guide-block-1-body">An implant restoration usually has three parts. The implant sits in the jaw, a connector piece joins it to the crown, and the crown is the part you see. The exact parts can vary, so your dentist explains what applies to you.</p>
+            <h3 class="r1a-guide-title" data-slot="guide-block-1-title">What your dentist reviews first</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-1-body">Cleveland Clinic says a provider reviews your medical history carefully before suggesting implants. Your visit also includes a look at your mouth and time for your questions.</p>
           </div>
         </li>
         <li class="r1a-guide-item" data-slot="guide-block-2">
           <span class="r1a-guide-num" aria-hidden="true">02</span>
           <div>
-            <h3 class="r1a-guide-title" data-slot="guide-block-2-title">What your dentist reviews first</h3>
-            <p class="r1a-guide-body" data-slot="guide-block-2-body">Your visit usually starts with your health history and a look at your mouth. Imaging may be taken as needed. You also have time to talk about your goals and ask questions.</p>
+            <h3 class="r1a-guide-title" data-slot="guide-block-2-title">Gum health and jawbone</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-2-body">Cleveland Clinic lists active or untreated gum disease and poor oral hygiene among the reasons implants may not suit someone. Your dentist explains whether either applies to you.</p>
           </div>
         </li>
         <li class="r1a-guide-item" data-slot="guide-block-3">
           <span class="r1a-guide-num" aria-hidden="true">03</span>
           <div>
-            <h3 class="r1a-guide-title" data-slot="guide-block-3-title">Looking after your teeth around an implant</h3>
-            <p class="r1a-guide-body" data-slot="guide-block-3-body">Daily brushing and flossing and regular dental visits are part of ongoing care. Tell your dentist if you notice any changes in the area. Your dentist explains the care that fits you.</p>
+            <h3 class="r1a-guide-title" data-slot="guide-block-3-title">Tobacco and healing</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-3-body">Cleveland Clinic says implants may not be a good idea if you smoke or vape, because this can disrupt healing. Tell your dentist about any tobacco use so you can talk it through.</p>
           </div>
         </li>
         <li class="r1a-guide-item" data-slot="guide-block-4">
           <span class="r1a-guide-num" aria-hidden="true">04</span>
           <div>
-            <h3 class="r1a-guide-title" data-slot="guide-block-4-title">Questions to bring with you</h3>
-            <p class="r1a-guide-body" data-slot="guide-block-4-body">Write down what you want to know before you come in. You might ask what each step involves, how many visits to expect and how to care for the area. Your dentist answers in plain language.</p>
+            <h3 class="r1a-guide-title" data-slot="guide-block-4-title">Looking after your teeth around an implant</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-4-body">Cleveland Clinic points to brushing, flossing and regular dental visits. The <a class="g2-inline-link" href="https://www.nidcr.nih.gov/grants-funding/funded-research/research-investments-advances/dental-materials" target="_blank" rel="noopener">National Institute of Dental and Craniofacial Research</a> notes that implants placed in the jaw can sometimes lead to inflammation of the tissues around the implant. Tell your dentist about any change in the area.</p>
+          </div>
+        </li>
+        <li class="r1a-guide-item" data-slot="guide-block-5">
+          <span class="r1a-guide-num" aria-hidden="true">05</span>
+          <div>
+            <h3 class="r1a-guide-title" data-slot="guide-block-5-title">Dentures and implants</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-5-body"><a class="g2-inline-link" href="https://medlineplus.gov/ency/article/002037.htm" target="_blank" rel="noopener">MedlinePlus</a> says implants help stabilize a denture and minimize its movement. Your dentist explains whether this is an option for you.</p>
+          </div>
+        </li>
+        <li class="r1a-guide-item" data-slot="guide-block-6">
+          <span class="r1a-guide-num" aria-hidden="true">06</span>
+          <div>
+            <h3 class="r1a-guide-title" data-slot="guide-block-6-title">Questions to bring with you</h3>
+            <p class="r1a-guide-body" data-slot="guide-block-6-body">Write down what you want to know before you come in. The checklist further down this page groups questions by topic. Your dentist answers in plain language.</p>
           </div>
         </li>
       </ol>
@@ -225,29 +338,110 @@
   </div>
 </section>
 
-<!-- ── REASONS ────────────────────────────────────────────────────── -->
-<section id="considerations" class="reasons-section" aria-labelledby="reasons-heading">
+<!-- ── OPTIONS ────────────────────────────────────────────────────── -->
+<section id="options" class="reasons-section" aria-labelledby="options-heading" data-slot="options">
   <div class="container">
     <div class="reasons-header reveal">
-      <span class="section-eyebrow section-eyebrow--light section-eyebrow--center" data-slot="reasons-eyebrow">What to Consider</span>
-      <h2 id="reasons-heading" data-slot="reasons-h2">Why Patients Ask About Implants</h2>
+      <span class="section-eyebrow section-eyebrow--light section-eyebrow--center" data-slot="options-eyebrow">Your Options</span>
+      <h2 id="options-heading" data-slot="options-h2">What the Choices Can Look Like</h2>
+      <p class="r1b-reasons-intro" data-slot="options-intro">Cleveland Clinic says implants vary by the type of material, the procedure and the number of teeth they replace. These are general descriptions only.</p>
     </div>
     <div class="reasons-grid" role="list">
-      <div class="reason-card reveal" role="listitem" data-slot="reason-1">
+      <div class="reason-card reveal" role="listitem" data-slot="option-1">
         <div class="reason-num">01</div>
-        <div class="reason-title" data-slot="reason-1-title">Placed in the Jawbone</div>
-        <p class="reason-body" data-slot="reason-1-body">The titanium post is placed into the jawbone and the bone bonds with it over time. The crown is attached to the post, not to the neighboring teeth.</p>
+        <div class="reason-title" data-slot="option-1-title">One Missing Tooth</div>
+        <p class="reason-body" data-slot="option-1-body">Cleveland Clinic describes a single implant that supports a crown. It also says your dentist may make a temporary tooth to wear until you heal.</p>
       </div>
-      <div class="reason-card reveal" role="listitem" data-slot="reason-2">
+      <div class="reason-card reveal" role="listitem" data-slot="option-2">
         <div class="reason-num">02</div>
-        <div class="reason-title" data-slot="reason-2-title">Custom Crown</div>
-        <p class="reason-body" data-slot="reason-2-body">The crown is made to match the shade and shape of the surrounding teeth. Your dentist discusses the details at the consultation.</p>
+        <div class="reason-title" data-slot="option-2-title">Several Missing Teeth</div>
+        <p class="reason-body" data-slot="option-2-body">Cleveland Clinic describes an implant bridge, where more than one implant supports a bridge that replaces several teeth. MouthHealthy says bridges and dentures are custom made to fit your mouth and your implants.</p>
       </div>
-      <div class="reason-card reveal" role="listitem" data-slot="reason-3">
+      <div class="reason-card reveal" role="listitem" data-slot="option-3">
         <div class="reason-num">03</div>
-        <div class="reason-title" data-slot="reason-3-title">Ongoing Care</div>
-        <p class="reason-body" data-slot="reason-3-body">Daily brushing, flossing and regular dental visits are part of caring for an implant. Your dentist explains what ongoing care looks like for you.</p>
+        <div class="reason-title" data-slot="option-3-title">A Full Arch of Teeth</div>
+        <p class="reason-body" data-slot="option-3-body">Cleveland Clinic describes a full arch option, where multiple implants support a full arch of teeth. Your dentist explains whether an option like this applies to you.</p>
       </div>
+    </div>
+    <p class="r1b-reasons-foot reveal" data-slot="options-foot">Your dentist explains which options apply after an exam. Which of these we provide at our Oxnard office: [TBD: confirm with client]</p>
+  </div>
+</section>
+
+<!-- ── QUESTIONS TO ASK ───────────────────────────────────────────── -->
+<section id="questions-to-ask" class="r1b-plan" aria-labelledby="questions-heading" data-slot="questions-to-ask">
+  <div class="container">
+    <div class="section-header-pair reveal">
+      <div>
+        <span class="section-eyebrow" data-slot="questions-eyebrow">Before Your Visit</span>
+        <h2 id="questions-heading" data-slot="questions-h2">Questions to Ask at Your <em>Consultation</em></h2>
+      </div>
+      <p class="section-intro" data-slot="questions-intro">Bring this list to your visit and add your own. The topics follow information shared by Cleveland Clinic and MouthHealthy. If you want to ask something before you come to our Oxnard office, <a class="g2-inline-link" href="contact.html">contact us</a>.</p>
+    </div>
+
+    <div class="r1b-plan-grid">
+
+      <div class="r1b-plan-card reveal" data-slot="questions-card-1">
+        <h3 class="r1b-plan-title">About your health and your mouth</h3>
+        <ul class="r1b-checklist" role="list">
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Which of my medications or health conditions should we discuss?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Could tobacco use affect my healing?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Do my gums and teeth need attention first?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Is there enough healthy jawbone, and what happens if my bone is thin?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Should a physician review my health first?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Which option fits me: one tooth, several teeth or a full arch?
+          </li>
+        </ul>
+        <p class="r1b-plan-note">Please do not send medical details through this website.</p>
+      </div>
+
+      <div class="r1b-plan-card reveal" data-slot="questions-card-2">
+        <h3 class="r1b-plan-title">About treatment and aftercare</h3>
+        <ul class="r1b-checklist" role="list">
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            What does my treatment plan include, and how long might each stage take?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Will I wear a temporary tooth while I heal?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            How do I care for the area at home, and which follow up visits will I need?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            What should I do if something feels wrong, and who do I contact?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            What training and experience does the dentist have with implant placement?
+          </li>
+          <li>
+            <span class="r1b-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            What will it cost, and what does my insurance plan cover?
+          </li>
+        </ul>
+        <p class="r1b-plan-note">MedlinePlus says implants should only be placed by a well trained dentist skilled in dental implant placement, so training is a fair question to ask.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -259,7 +453,7 @@
       <div class="faq-left reveal">
         <span class="section-eyebrow" data-slot="faq-eyebrow">Common Questions</span>
         <h2 id="faq-heading" data-slot="faq-h2">Dental Implant FAQ</h2>
-        <p data-slot="faq-intro">Questions patients often ask before scheduling an implant consultation. Call us if you need more specific information for your situation.</p>
+        <p data-slot="faq-intro">Questions patients often ask before scheduling an implant consultation in Oxnard. Call us if you need more specific information for your situation.</p>
         <div class="faq-booking-card">
           <h3>Schedule a Consultation</h3>
           <p class="r1a-card-intro">Request a consultation at our Oxnard office.</p>
@@ -287,7 +481,7 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="sfaq1-answer" role="region" aria-labelledby="sfaq1-btn" hidden data-slot="faq-a-1">
-            Candidacy depends on factors including jawbone density, gum health, and overall medical history. The only way to know is through a clinical evaluation. We review these details at your consultation and explain what is involved before recommending anything.
+            Cleveland Clinic says the main requirement is enough healthy bone in the jaw, and that a dentist is the only person who can tell you whether you are a candidate. We review these details with you at a consultation.
           </div>
         </div>
 
@@ -297,7 +491,7 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="sfaq2-answer" role="region" aria-labelledby="sfaq2-btn" hidden data-slot="faq-a-2">
-            The timeline varies by individual. After the implant post is placed, a healing period is needed before the crown can be attached. We outline the expected timeline during treatment planning so you know what to plan for.
+            The American Academy of Implant Dentistry says treatment time depends on factors such as medical and dental history and jawbone condition. MouthHealthy says healing can take several months. We outline the expected timeline during treatment planning.
           </div>
         </div>
 
@@ -307,7 +501,7 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="sfaq3-answer" role="region" aria-labelledby="sfaq3-btn" hidden data-slot="faq-a-3">
-            The placement appointment is performed with local anesthesia. Some patients experience soreness in the days following. We discuss what to expect and provide aftercare instructions at each stage.
+            Cleveland Clinic lists numbing medicine for the gums among the steps and says slight discomfort and swelling are normal after surgery. MouthHealthy says your dentist may recommend soft foods, cold foods and warm soup during healing. Ask your dentist what to expect in your situation.
           </div>
         </div>
 
@@ -317,7 +511,7 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="sfaq4-answer" role="region" aria-labelledby="sfaq4-btn" hidden data-slot="faq-a-4">
-            Coverage varies widely by plan. Some plans cover a portion of the restoration; many do not cover the implant post itself. We recommend contacting your insurance provider directly to understand your benefits before scheduling.
+            Your insurance company can tell you what your plan includes. Please bring your questions about insurance and payment to your visit. [TBD: confirm with client how we handle insurance and payment questions]
           </div>
         </div>
 
@@ -327,7 +521,37 @@
             <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
           </button>
           <div class="faq-answer" id="sfaq5-answer" role="region" aria-labelledby="sfaq5-btn" hidden data-slot="faq-a-5">
-            Implants are cleaned the same way as natural teeth: brushing twice daily and flossing. Regular dental visits allow us to monitor the implant and surrounding tissue. We review specific care instructions at your later appointments.
+            Cleveland Clinic points to brushing, flossing and regular dental visits. The National Institute of Dental and Craniofacial Research notes that implants can sometimes lead to inflammation of the tissues around them, so tell your dentist about any change. We review care instructions with you.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false" role="listitem" data-slot="faq-item-6">
+          <button class="faq-question" aria-expanded="false" aria-controls="sfaq6-answer" id="sfaq6-btn" data-slot="faq-q-6">
+            How is an implant different from a bridge or a denture?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+          </button>
+          <div class="faq-answer" id="sfaq6-answer" role="region" aria-labelledby="sfaq6-btn" hidden data-slot="faq-a-6">
+            Cleveland Clinic says a traditional bridge requires shaving down the neighboring teeth, while a single tooth implant does not involve them. MedlinePlus says implants help stabilize a denture and minimize its movement. Your dentist can compare the options for your mouth.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false" role="listitem" data-slot="faq-item-7">
+          <button class="faq-question" aria-expanded="false" aria-controls="sfaq7-answer" id="sfaq7-btn" data-slot="faq-q-7">
+            What if I do not have enough jawbone?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+          </button>
+          <div class="faq-answer" id="sfaq7-answer" role="region" aria-labelledby="sfaq7-btn" hidden data-slot="faq-a-7">
+            Cleveland Clinic says a provider may need to place dental bone grafts to build up places where there is bone loss. Whether this applies to you is a question for your dentist after an exam.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false" role="listitem" data-slot="faq-item-8">
+          <button class="faq-question" aria-expanded="false" aria-controls="sfaq8-answer" id="sfaq8-btn" data-slot="faq-q-8">
+            When should I contact my dentist after treatment?
+            <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></span>
+          </button>
+          <div class="faq-answer" id="sfaq8-answer" role="region" aria-labelledby="sfaq8-btn" hidden data-slot="faq-a-8">
+            Cleveland Clinic lists signs to report to your dentist, including a loose or wobbly implant, bleeding gums, swollen gums, fever and pus around the implant. Contact your dentist if you notice any of these. If you believe you are experiencing a medical emergency, call 911 or go to the nearest emergency room.
           </div>
         </div>
       </div>

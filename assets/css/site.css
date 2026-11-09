@@ -300,19 +300,19 @@ svg{overflow:visible}
 /* Primary nav */
 .site-nav{display:flex;align-items:center;gap:var(--sp-8)}
 .nav-links{display:flex;gap:var(--sp-6);align-items:center}
-.nav-links a{
+.nav-links > li > a{
   font-size:var(--text-sm);font-weight:500;letter-spacing:0.02em;
   color:var(--text-primary);transition:color var(--t-fast);position:relative;
 }
-.nav-links a::after{
+.nav-links > li > a::after{
   content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;
   background:var(--gold-text-light);
   transform:scaleX(0);transform-origin:center;
   transition:transform var(--t-fast);
 }
-.nav-links a:hover{color:var(--gold-text-light)}
-.nav-links a:hover::after,.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
-.nav-links a[aria-current="page"]{color:var(--gold-text-light)}
+.nav-links > li > a:hover{color:var(--gold-text-light)}
+.nav-links > li > a:hover::after,.nav-links > li > a[aria-current="page"]::after{transform:scaleX(1)}
+.nav-links > li > a[aria-current="page"]{color:var(--gold-text-light)}
 
 /* Hamburger */
 .nav-toggle{
@@ -330,6 +330,74 @@ svg{overflow:visible}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;width:0}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+
+/* ====================================================================
+   REVISION 3: SERVICES MENU (desktop dropdown + mobile accordion)
+   ==================================================================== */
+.nav-item{position:relative;display:flex;align-items:center;gap:2px;padding-block:20px;margin-block:-20px}
+.nav-item.has-menu{z-index:1}
+.nav-menu-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border:0;background:none;color:var(--text-primary);
+  cursor:pointer;border-radius:var(--radius-pill);
+  transition:color var(--t-fast),background var(--t-fast);
+}
+.nav-menu-toggle:hover,.nav-item.is-open .nav-menu-toggle{color:var(--gold-text-light);background:rgba(110,80,26,0.08)}
+.nav-menu-toggle:focus-visible{outline:2px solid var(--gold-text-light);outline-offset:2px}
+.nav-menu-toggle svg{width:10px;height:6px;transition:transform var(--t-fast)}
+.nav-item.is-open .nav-menu-toggle svg{transform:rotate(180deg)}
+.nav-menu{
+  position:absolute;top:100%;left:50%;
+  width:min(680px,calc(100vw - 48px));
+  padding:var(--sp-6);
+  background:var(--surface-pearl);
+  border:1px solid rgba(110,80,26,0.22);
+  border-radius:var(--radius-lg);
+  box-shadow:0 18px 48px rgba(37,37,37,0.16);
+  opacity:0;visibility:hidden;transform:translate(-50%,8px);
+  transition:opacity var(--t-fast),transform var(--t-fast),visibility 0s linear var(--t-fast);
+  z-index:2;
+}
+.nav-item.is-open .nav-menu{opacity:1;visibility:visible;transform:translate(-50%,0);transition-delay:0s}
+.nav-menu-title{
+  margin:0 0 var(--sp-3);padding:0 12px;
+  font-size:var(--text-xs);font-weight:600;letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;color:var(--gold-text-light);
+}
+.nav-menu-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px var(--sp-4);list-style:none;margin:0;padding:0}
+.nav-menu-list a{
+  display:block;padding:9px 12px;border-radius:var(--radius-sm);
+  font-size:var(--text-sm);font-weight:500;color:var(--text-primary);
+  transition:background var(--t-fast),color var(--t-fast);
+}
+.nav-menu-list a:hover,.nav-menu-list a:focus-visible{background:rgba(201,168,76,0.18);color:var(--gold-text-light)}
+.nav-menu-list a[aria-current="page"]{background:rgba(201,168,76,0.14);color:var(--gold-text-light)}
+.nav-menu-all{
+  display:flex;align-items:center;gap:var(--sp-2);
+  margin-top:var(--sp-4);padding:var(--sp-4) 12px 0;
+  border-top:1px solid var(--border-gold-dim);
+  font-size:var(--text-sm);font-weight:600;letter-spacing:0.02em;color:var(--gold-text-light);
+}
+.nav-menu-all:hover{color:var(--text-primary)}
+/* narrow desktop and tablet: a two column panel so it stays on screen */
+@media(max-width:1100px){
+  .nav-menu{width:min(560px,calc(100vw - 48px))}
+  .nav-menu-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+.mobile-nav-group{text-align:center;width:100%}
+.mobile-nav-row{display:flex;align-items:center;justify-content:center;gap:var(--sp-3)}
+.mobile-nav-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border:1px solid var(--border-gold-dim);border-radius:50%;
+  background:none;color:var(--text-primary);cursor:pointer;
+}
+.mobile-nav-toggle svg{width:12px;height:8px;transition:transform var(--t-fast)}
+.mobile-nav-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mobile-nav-sub{list-style:none;margin:var(--sp-4) 0 0;padding:0;display:grid;gap:2px;text-align:center}
+.mobile-nav-sub[hidden]{display:none}
+.mobile-nav .mobile-nav-sub a{font-family:var(--font-sans);font-size:var(--text-md);font-weight:500;display:block;padding:11px 0}
+
 /* ====================================================================
    MOBILE NAV
    ==================================================================== */
@@ -337,7 +405,8 @@ svg{overflow:visible}
   position:fixed;inset:0;
   background:var(--surface-pearl);
   z-index:calc(var(--z-header) - 1);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-8);
+  display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:var(--sp-8);
+  overflow-y:auto;padding:calc(88px + var(--sp-4)) var(--sp-6) calc(88px + var(--sp-6));
   opacity:0;pointer-events:none;transition:opacity var(--t-base);
 }
 .mobile-nav.open{opacity:1;pointer-events:all}
@@ -2852,7 +2921,7 @@ html{scroll-padding-top:130px}
 .r1a-service-tile.is-current .r1a-service-icon{
   background:var(--gold);
   color:var(--surface-near-black);
-}
+}
 
 /* ====================================================================
    RESPONSIVE
@@ -2870,7 +2939,7 @@ html{scroll-padding-top:130px}
     text-align:left;
     gap:var(--sp-4);
     padding:var(--sp-4) var(--sp-5);
-  }
+  }
   .r1a-service-icon{width:48px;height:48px}
   .r1a-service-icon svg{width:24px;height:24px}
   .r1a-guide-item{gap:var(--sp-4)}
@@ -3397,3 +3466,313 @@ html{scroll-padding-top:130px}
 
 /* Area page: about the practice and dentist */
 .r2-about-actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-8)}
+
+/* =============================================================
+   HOME MOTION (2026-11-05)
+   Home page only. Every selector is scoped under body.page-home so the
+   other 12 pages cannot change. Borrowed from the motion sample:
+   dark pinned opener that lifts like a curtain, word-by-word H1 intro,
+   pearl office card sliding in, header transparent over the dark stage,
+   scroll-driven office photo strip, sticky "why" column with numbered
+   reasons, first-visit dial, emergency and insurance band, areas block,
+   sticky FAQ column. Pins, the strip drive and the dial run only when
+   site.js adds body.home-motion (min-width 1025px, motion allowed, no
+   Save-Data). Without JS, under reduced motion, with Save-Data or on
+   phones everything is static and visible. Tokens from :root only.
+   ============================================================= */
+
+/* ---- Header: transparent over the dark opener (desktop, toggled by JS) ---- */
+body.page-home .site-header.home-on-dark{
+  background:rgba(20,20,20,0.28);
+  border-bottom-color:transparent;
+  box-shadow:none;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+body.page-home .site-header.home-on-dark .logo-text-main,
+body.page-home .site-header.home-on-dark .nav-links a{color:var(--text-on-dark)}
+body.page-home .site-header.home-on-dark .logo-text-sub{color:var(--text-on-dark-sub)}
+body.page-home .site-header.home-on-dark .nav-links a:hover{color:var(--gold-light)}
+body.page-home .site-header.home-on-dark .nav-links a[aria-current="page"]{color:var(--text-gold)}
+body.page-home .site-header.home-on-dark .nav-links a::after{background:var(--gold)}
+body.page-home .site-header.home-on-dark .nav-toggle span{background:var(--text-on-dark)}
+
+/* ---- Hero: dark opener (static base, all viewports) ---- */
+body.page-home .home-hero-pin{position:relative;background:var(--surface-dark)}
+body.page-home .home-hero{
+  position:relative;--e:0;
+  background:var(--surface-dark);color:var(--text-on-dark);
+  overflow:hidden;
+  padding-bottom:var(--sp-12);
+  display:flex;flex-direction:column;
+}
+/* phones and tablets: copy first, then the photo, then the office card */
+body.page-home .home-hero-copy{order:1}
+body.page-home .home-stage{order:2}
+body.page-home .home-hero-card{order:3}
+body.page-home .home-stage{
+  position:relative;margin:0 var(--container-pad);
+  aspect-ratio:16/10;border-radius:var(--radius-card);overflow:hidden;
+  background:var(--surface-graphite);
+}
+body.page-home .home-stage-photo{position:absolute;inset:0}
+body.page-home .home-stage-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+body.page-home .home-stage-photo::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(26,26,26,0.62),rgba(26,26,26,0) 32%);
+}
+body.page-home .home-hero-copy{position:relative;z-index:2;padding-top:calc(80px + var(--sp-12));padding-bottom:var(--sp-10)}
+body.page-home .home-hero-eyebrow{color:var(--text-gold)}
+body.page-home .home-hero-h1{color:var(--text-on-dark);font-size:clamp(2.5rem,4vw,3.75rem);margin-bottom:var(--sp-6)}
+body.page-home .home-hero-h1 em{color:var(--gold-light)}
+body.page-home .home-hero-sub{color:var(--text-on-dark-sub);max-width:44ch}
+body.page-home .home-hero-actions{margin-bottom:0}
+body.page-home .home-hero-card{
+  position:relative;z-index:3;
+  width:min(calc(100% - 2 * var(--container-pad) - 16px),320px);
+  margin:-28px 0 0 calc(var(--container-pad) + 16px);
+  background:var(--surface-pearl);color:var(--text-primary);
+  border-radius:var(--radius-lg);border-top:3px solid var(--gold);
+  padding:var(--sp-5) var(--sp-6);
+  box-shadow:var(--shadow-lg);
+}
+body.page-home .home-hero-card-k{
+  display:block;font-size:var(--text-xs);font-weight:600;
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--gold-text-light);margin-bottom:var(--sp-2);
+}
+body.page-home .home-hero-card-line{
+  font-family:var(--font-serif);font-size:var(--text-xl);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-primary);margin-bottom:var(--sp-2);
+}
+body.page-home .home-hero-card-phone{display:inline-block;font-weight:500;color:var(--text-primary);margin-bottom:var(--sp-1);transition:color var(--t-fast)}
+body.page-home .home-hero-card-phone:hover{color:var(--gold-text-light)}
+body.page-home .home-hero-card-hours{font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-relaxed)}
+
+/* ---- Hero: desktop split (photo in the right half, copy on the left) ---- */
+@media(min-width:1025px){
+  body.page-home .home-hero{min-height:100vh;display:flex;flex-direction:row;align-items:center;padding-bottom:0}
+  body.page-home .home-stage{position:absolute;inset:0;margin:0;aspect-ratio:auto;border-radius:0;background:var(--surface-dark)}
+  body.page-home .home-stage-photo{left:50%}
+  body.page-home .home-stage-photo::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,var(--surface-dark) 0%,rgba(26,26,26,0) 24%);
+  }
+  body.page-home .home-hero-copy{width:100%;padding-top:calc(88px + var(--sp-10));padding-bottom:var(--sp-16)}
+  body.page-home .home-hero-copy > *{max-width:min(34vw,480px)}
+  body.page-home .home-hero-copy > .home-hero-h1{max-width:min(38vw,540px)}
+  body.page-home .home-hero-card{position:absolute;left:calc(50% - 48px);top:56vh;margin:0;width:min(24vw,320px)}
+}
+
+/* ---- Hero: pinned curtain (desktop, motion allowed, JS present) ---- */
+body.page-home.home-motion .home-hero-pin{height:180vh;background:transparent;z-index:2;pointer-events:none}
+body.page-home.home-motion .home-hero{
+  position:sticky;top:0;height:100vh;min-height:0;pointer-events:auto;
+  clip-path:inset(0 0 calc(var(--e,0) * 100%) 0);
+}
+body.page-home.home-motion .home-hero.is-done{visibility:hidden}
+/* the next section sits under the pinned hero, so the rising edge uncovers it */
+body.page-home.home-motion .home-strip{position:relative;z-index:1;margin-top:-100vh;padding-top:calc(var(--section-y) + var(--sp-4))}
+
+/* ---- Opening sequence (html.home-intro is added by JS when motion is allowed) ---- */
+@keyframes home-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes home-word{from{opacity:0;transform:translateY(0.3em)}to{opacity:1;transform:none}}
+@keyframes home-card{from{opacity:0;transform:translate(28px,12px) scale(0.96)}to{opacity:1;transform:none}}
+@keyframes home-window{from{clip-path:inset(0 100% 0 0);opacity:0.5}to{clip-path:inset(0 0 0 0);opacity:1}}
+.home-intro body.page-home .home-hero-eyebrow{animation:home-up 0.8s var(--ease-out-expo) 0.35s both}
+.home-intro body.page-home .home-hw{display:inline-block;animation:home-word 0.8s var(--ease-out-expo) both}
+.home-intro body.page-home .home-hero-sub{animation:home-up 0.9s var(--ease-out-expo) 1.5s both}
+.home-intro body.page-home .home-hero-actions{animation:home-up 0.9s var(--ease-out-expo) 1.7s both}
+.home-intro body.page-home .home-hero-card{animation:home-card 1s var(--ease-out-expo) 1.3s both}
+.home-intro body.page-home .home-stage-photo{animation:home-window 1.4s cubic-bezier(0.65,0,0.35,1) 0.6s both}
+
+/* ---- Office photo strip ---- */
+body.page-home .home-strip{background:var(--surface-warm-grey);padding:var(--section-y) 0;overflow:hidden}
+body.page-home .home-strip-head{margin-bottom:var(--sp-10)}
+body.page-home .home-strip-head h2{
+  font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-primary);max-width:18ch;
+}
+body.page-home .home-strip-head h2 em{font-style:italic;color:var(--gold-text-light)}
+body.page-home .home-strip-rail{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:var(--sp-4)}
+body.page-home .home-strip-track{
+  display:flex;align-items:center;gap:var(--sp-6);width:max-content;
+  padding-inline:max(var(--container-pad),calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+}
+body.page-home .home-strip-photo{margin:0;flex-shrink:0;border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-md);scroll-snap-align:start;background:var(--surface-graphite)}
+body.page-home .home-strip-photo img{width:100%;height:100%;object-fit:cover}
+body.page-home .home-strip-photo--a{width:42vw;aspect-ratio:16/9}
+body.page-home .home-strip-photo--b{width:26vw;aspect-ratio:4/5}
+body.page-home .home-strip-photo--c{width:38vw;aspect-ratio:3/2}
+body.page-home.home-motion .home-strip-rail{overflow:hidden;scroll-snap-type:none}
+body.page-home.home-motion .home-strip-track{transform:translateX(var(--x,0px));will-change:transform}
+@media(max-width:1024px){
+  body.page-home .home-strip-photo--a{width:72vw}
+  body.page-home .home-strip-photo--b{width:52vw}
+  body.page-home .home-strip-photo--c{width:72vw}
+}
+
+/* ---- Why us: sticky heading column, numbered reasons ---- */
+body.page-home .home-why{background:var(--surface-warm-grey);padding:var(--section-y) 0;border-top:1px solid var(--border-light)}
+body.page-home .home-why-inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2.5rem,6vw,6rem);align-items:start}
+body.page-home .home-why-side{align-self:stretch}
+body.page-home .home-why-sticky h2{
+  font-family:var(--font-serif);font-size:clamp(2rem,3.6vw,3rem);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-primary);margin-bottom:var(--sp-5);
+}
+body.page-home .home-why-sticky h2 em{font-style:italic;color:var(--gold-text-light)}
+body.page-home .home-why-sticky p{font-size:var(--text-base);font-weight:300;color:var(--text-secondary);line-height:var(--leading-relaxed);max-width:44ch;margin-bottom:var(--sp-6)}
+body.page-home .home-why-list{display:flex;flex-direction:column;gap:var(--sp-5);padding-left:36px}
+body.page-home .home-why-item{
+  position:relative;background:#fff;
+  border:1px solid var(--border-gold-dim);border-radius:var(--radius-card);
+  padding:var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-12);
+  box-shadow:var(--shadow-xs);
+}
+body.page-home .home-why-num{
+  position:absolute;left:-36px;top:50%;transform:translateY(-50%);
+  width:72px;height:72px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#fff;border:1px solid var(--border-gold-dim);box-shadow:var(--shadow-sm);
+  font-family:var(--font-serif);font-size:2rem;font-weight:400;line-height:1;color:var(--text-primary);
+}
+body.page-home .home-why-item h3{font-family:var(--font-serif);font-size:var(--text-2xl);font-weight:500;line-height:var(--leading-snug);color:var(--text-primary);margin-bottom:var(--sp-3)}
+body.page-home .home-why-item p{font-size:var(--text-base);font-weight:300;color:var(--text-secondary);line-height:var(--leading-relaxed);max-width:52ch}
+/* cards use the shared .reveal lift only (a sideways offset overflowed 390 px) */
+@media(min-width:1025px){body.page-home .home-why-sticky{position:sticky;top:120px}}
+@media(max-width:1024px){
+  body.page-home .home-why-inner{grid-template-columns:1fr}
+  body.page-home .home-why-list{padding-left:24px}
+  body.page-home .home-why-item{padding:var(--sp-6) var(--sp-5) var(--sp-6) var(--sp-8)}
+  body.page-home .home-why-num{left:-24px;width:48px;height:48px;font-size:1.4rem}
+}
+
+/* ---- Dentist: pearl on the home page so it separates from the why band ---- */
+body.page-home .doctor-section{background:var(--surface-pearl)}
+
+/* ---- First visit: static steps on dark (all viewports) ---- */
+body.page-home .home-journey{background:var(--surface-dark);color:var(--text-on-dark)}
+body.page-home .home-journey-stage{position:relative;padding:var(--section-y) 0}
+body.page-home .home-journey-head{max-width:720px}
+body.page-home .home-journey-head h2{
+  font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-on-dark);margin-bottom:var(--sp-4);
+}
+body.page-home .home-journey-head h2 em{font-style:italic;color:var(--text-gold)}
+body.page-home .home-journey-head p{font-size:var(--text-base);font-weight:300;color:var(--text-on-dark-sub);line-height:var(--leading-relaxed);max-width:56ch}
+body.page-home .home-dial{display:none}
+body.page-home .home-jsteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-8);margin-top:var(--sp-12)}
+body.page-home .home-jstep{padding-top:var(--sp-6);border-top:2px solid var(--gold)}
+body.page-home .home-jstep-num{
+  display:block;font-size:var(--text-xs);font-weight:600;
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--text-gold);margin-bottom:var(--sp-3);
+}
+body.page-home .home-jstep-title{font-family:var(--font-serif);font-size:var(--text-xl);font-weight:500;line-height:var(--leading-snug);color:var(--text-on-dark);margin-bottom:var(--sp-3)}
+body.page-home .home-jstep-body{font-size:var(--text-sm);font-weight:300;color:var(--text-on-dark-sub);line-height:var(--leading-relaxed)}
+body.page-home .home-jstep-body strong{color:var(--text-on-dark);font-weight:500}
+@media(max-width:1024px){body.page-home .home-jsteps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){body.page-home .home-jsteps{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- First visit: dial (desktop, motion allowed, JS present) ---- */
+body.page-home.home-motion .home-journey-pin{height:400vh}
+body.page-home.home-motion .home-journey-stage{position:sticky;top:0;height:100vh;overflow:hidden;padding:calc(88px + var(--sp-8)) 0 0}
+body.page-home.home-motion .home-journey-head{text-align:center;margin-inline:auto}
+body.page-home.home-motion .home-journey-head .section-eyebrow{justify-content:center}
+body.page-home.home-motion .home-journey-head p{margin-inline:auto}
+body.page-home.home-motion .home-dial{
+  display:block;position:absolute;left:50%;top:max(44vh,330px);
+  width:min(110vh,1100px);aspect-ratio:1;transform:translateX(-50%);
+  --R:calc(min(110vh,1100px) / 2);
+}
+body.page-home.home-motion .home-dial-wheel{
+  position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(240,237,230,0.22);
+  transform:rotate(var(--rot,0deg));transition:transform 0.2s linear;
+}
+body.page-home.home-motion .home-dial-pt{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a,0deg)) translateY(calc(-1 * var(--R)))}
+body.page-home.home-motion .home-dial-dot{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+body.page-home.home-motion .home-dial-badge{
+  position:absolute;left:-22px;top:-74px;width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid rgba(240,237,230,0.5);
+  font-family:var(--font-sans);font-size:var(--text-base);font-weight:600;line-height:1;color:var(--text-on-dark);
+  transform:rotate(calc(-1 * (var(--a,0deg) + var(--rot,0deg))));
+  transition:background var(--t-base),color var(--t-base),border-color var(--t-base);
+}
+body.page-home.home-motion .home-dial-pt.on .home-dial-badge{background:var(--text-on-dark);color:var(--surface-dark);border-color:var(--text-on-dark)}
+body.page-home.home-motion .home-jsteps{
+  display:block;position:absolute;left:50%;top:calc(max(44vh,330px) + 20vh);
+  transform:translateX(-50%);width:min(640px,90vw);margin:0;padding:0;
+}
+body.page-home.home-motion .home-jstep{
+  position:absolute;left:0;right:0;top:0;
+  border-top:0;padding-top:0;text-align:center;
+  opacity:0;transform:translateY(16px);
+  transition:opacity 0.5s ease,transform 0.6s var(--ease-out-expo);
+}
+body.page-home.home-motion .home-jstep.on{opacity:1;transform:none}
+body.page-home.home-motion .home-jstep-title{font-size:clamp(2rem,3vw,2.6rem);color:var(--text-gold)}
+body.page-home.home-motion .home-jstep-body{font-size:var(--text-md);max-width:44ch;margin-inline:auto;color:var(--text-on-dark)}
+
+/* ---- Emergency and insurance band ---- */
+body.page-home .home-band{background:var(--surface-graphite);color:var(--text-on-dark);padding:var(--section-y) 0}
+body.page-home .home-band-inner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+body.page-home .home-band h2{
+  font-family:var(--font-serif);font-size:clamp(2rem,3.6vw,3rem);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-on-dark);margin-bottom:var(--sp-4);
+}
+body.page-home .home-band h2 em{font-style:italic;color:var(--text-gold)}
+body.page-home .home-band-copy p{font-size:var(--text-base);font-weight:300;color:var(--text-on-dark-sub);line-height:var(--leading-relaxed);max-width:50ch;margin-bottom:var(--sp-8)}
+body.page-home .home-band-copy p a{color:var(--gold-light);text-decoration:underline;text-underline-offset:2px}
+body.page-home .home-band-copy p a:hover{color:var(--text-on-dark)}
+body.page-home .home-band-actions{display:flex;flex-wrap:wrap;gap:var(--sp-4)}
+body.page-home .home-band-cards{display:grid;gap:var(--sp-4)}
+body.page-home .home-band-card{padding:var(--sp-6) var(--sp-7);border:1px solid var(--border-glass);border-radius:var(--radius-lg);background:var(--surface-mid)}
+body.page-home .home-band-k{
+  font-size:var(--text-xs);font-weight:600;
+  letter-spacing:var(--tracking-widest);text-transform:uppercase;
+  color:var(--text-gold);margin-bottom:var(--sp-3);
+}
+body.page-home .home-band-tbd{font-size:var(--text-base);font-style:italic;color:var(--text-on-dark);line-height:var(--leading-relaxed)}
+body.page-home .home-band-s{font-size:var(--text-sm);color:var(--text-on-dark-sub);margin-top:var(--sp-3);line-height:var(--leading-relaxed)}
+@media(max-width:1024px){body.page-home .home-band-inner{grid-template-columns:1fr}}
+
+/* ---- Areas ---- */
+body.page-home .home-areas{background:var(--surface-warm-grey);padding:var(--section-y) 0;border-top:1px solid var(--border-light)}
+body.page-home .home-areas-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+body.page-home .home-areas h2{
+  font-family:var(--font-serif);font-size:clamp(2rem,3.6vw,3rem);font-weight:500;
+  line-height:var(--leading-snug);color:var(--text-primary);margin-bottom:var(--sp-4);
+}
+body.page-home .home-areas h2 em{font-style:italic;color:var(--gold-text-light)}
+body.page-home .home-areas-copy p{font-size:var(--text-base);font-weight:300;color:var(--text-secondary);line-height:var(--leading-relaxed);max-width:48ch}
+body.page-home .home-area-links{display:flex;flex-wrap:wrap;gap:var(--sp-3)}
+body.page-home .home-area-links a{
+  display:inline-flex;align-items:center;min-height:48px;padding:0 var(--sp-6);
+  border:1px solid var(--border-medium);border-radius:var(--radius-pill);background:#fff;
+  font-size:var(--text-sm);font-weight:500;color:var(--text-primary);
+  transition:border-color var(--t-fast),color var(--t-fast);
+}
+body.page-home .home-area-links a:hover{border-color:var(--gold);color:var(--gold-text-light)}
+body.page-home .home-area-links a.home-area-all{background:var(--text-primary);border-color:var(--text-primary);color:var(--text-on-dark)}
+body.page-home .home-area-links a.home-area-all:hover{background:var(--surface-graphite);color:var(--text-on-dark)}
+@media(max-width:1024px){body.page-home .home-areas-inner{grid-template-columns:1fr}}
+
+/* ---- FAQ: the heading column sticks on desktop (card no longer sticks on its own) ---- */
+@media(min-width:1025px){
+  body.page-home .faq-left{position:sticky;top:120px}
+  body.page-home .faq-booking-card{position:static}
+}
+
+/* ---- Fallbacks: no JS, reduced motion ---- */
+.no-js body.page-home .home-jstep{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  body.page-home .home-jstep{opacity:1;transform:none}
+  body.page-home .home-hero{clip-path:none}
+}
+
+/* HOME MOTION (2026-11-05): home end band has no map (the contact block above already shows one) */
+body.page-home .cta-band-inner{grid-template-columns:minmax(0,1fr)}
+
+/* HOME MOTION (2026-11-05): hold the hero copy until the web fonts are ready (prevents the font swap layout shift) */
+.home-fonts-wait body.page-home .home-hero-copy,.home-fonts-wait body.page-home .home-hero-card{visibility:hidden}
