@@ -3785,3 +3785,21 @@ body.page-home .cta-band-inner{grid-template-columns:minmax(0,1fr)}
 
 /* HOME MOTION (2026-11-05): hold the hero copy until the web fonts are ready (prevents the font swap layout shift) */
 .home-fonts-wait body.page-home .home-hero-copy,.home-fonts-wait body.page-home .home-hero-card{visibility:hidden}
+
+/* ====================================================================
+   PHASE 3: IMPORTED ARTICLES (live blog posts brought in as is)
+   Tables, FAQ blocks, figures and dividers that the live posts contain.
+   ==================================================================== */
+.g5-prose figure{margin:0 0 var(--sp-6)}
+.g5-prose figcaption{margin-top:var(--sp-2);font-size:var(--text-sm);color:var(--text-secondary)}
+.g5-prose img{display:block;max-width:100%;height:auto;border-radius:var(--radius-md)}
+.g5-prose hr{border:0;border-top:1px solid var(--border-medium);margin:var(--sp-8) 0}
+.g5-table-wrap{overflow-x:auto;margin:0 0 var(--sp-6);-webkit-overflow-scrolling:touch}
+.g5-prose table{border-collapse:collapse;width:100%;min-width:34rem;font-size:var(--text-sm)}
+.g5-prose th,.g5-prose td{padding:var(--sp-3) var(--sp-4);border:1px solid var(--border-medium);text-align:left;vertical-align:top}
+.g5-prose th,.g5-prose thead td{background:rgba(201,168,76,0.14);font-weight:600;color:var(--text-primary)}
+.g5-prose details{border:1px solid var(--border-medium);border-radius:var(--radius-md);padding:var(--sp-4) var(--sp-5);margin:0 0 var(--sp-3);background:var(--surface-white,#fff)}
+.g5-prose summary{cursor:pointer;font-weight:600;color:var(--text-primary);list-style-position:outside}
+.g5-prose summary:focus-visible{outline:2px solid var(--gold-text-light);outline-offset:3px}
+.g5-prose details[open] summary{margin-bottom:var(--sp-3)}
+.g5-prose details p:last-child{margin-bottom:0}

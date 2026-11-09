@@ -40,16 +40,16 @@
     <ul class="mobile-nav-sub" id="mobileServices" role="list" hidden>
     <li><a href="service-implants.html" onclick="closeMobileNav()">Dental Implants</a></li>
     <li><a href="service-general-dentistry.html" onclick="closeMobileNav()">General Dentistry</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Veneers</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Invisalign</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Cosmetic Dentistry</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Teeth Whitening</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Gum Disease Treatment</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Root Canal</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Emergency Dentistry</a></li>
-    <li><a href="#" onclick="closeMobileNav()">TMJ Therapy</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Wisdom Teeth</a></li>
-    <li><a href="#" onclick="closeMobileNav()">Dental Crowns</a></li>
+    <li><a href="service-veneers.html" onclick="closeMobileNav()">Veneers</a></li>
+    <li><a href="service-invisalign.html" onclick="closeMobileNav()">Invisalign</a></li>
+    <li><a href="service-cosmetic-dentistry.html" onclick="closeMobileNav()">Cosmetic Dentistry</a></li>
+    <li><a href="service-teeth-whitening.html" onclick="closeMobileNav()">Teeth Whitening</a></li>
+    <li><a href="service-gum-disease-treatment.html" onclick="closeMobileNav()">Gum Disease Treatment</a></li>
+    <li><a href="service-root-canal.html" onclick="closeMobileNav()">Root Canal</a></li>
+    <li><a href="service-emergency-dentistry.html" onclick="closeMobileNav()">Emergency Dentistry</a></li>
+    <li><a href="service-tmj-therapy.html" onclick="closeMobileNav()">TMJ Therapy</a></li>
+    <li><a href="service-wisdom-teeth.html" onclick="closeMobileNav()">Wisdom Teeth</a></li>
+    <li><a href="service-dental-crowns.html" onclick="closeMobileNav()">Dental Crowns</a></li>
       <li><a href="services.html" onclick="closeMobileNav()">All services</a></li>
     </ul>
   </div>
@@ -87,16 +87,16 @@
               <ul class="nav-menu-list" role="list">
                   <li><a href="service-implants.html">Dental Implants</a></li>
                   <li><a href="service-general-dentistry.html">General Dentistry</a></li>
-                  <li><a href="#">Veneers</a></li>
-                  <li><a href="#">Invisalign</a></li>
-                  <li><a href="#">Cosmetic Dentistry</a></li>
-                  <li><a href="#">Teeth Whitening</a></li>
-                  <li><a href="#">Gum Disease Treatment</a></li>
-                  <li><a href="#">Root Canal</a></li>
-                  <li><a href="#">Emergency Dentistry</a></li>
-                  <li><a href="#">TMJ Therapy</a></li>
-                  <li><a href="#">Wisdom Teeth</a></li>
-                  <li><a href="#">Dental Crowns</a></li>
+                  <li><a href="service-veneers.html">Veneers</a></li>
+                  <li><a href="service-invisalign.html">Invisalign</a></li>
+                  <li><a href="service-cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+                  <li><a href="service-teeth-whitening.html">Teeth Whitening</a></li>
+                  <li><a href="service-gum-disease-treatment.html">Gum Disease Treatment</a></li>
+                  <li><a href="service-root-canal.html">Root Canal</a></li>
+                  <li><a href="service-emergency-dentistry.html">Emergency Dentistry</a></li>
+                  <li><a href="service-tmj-therapy.html">TMJ Therapy</a></li>
+                  <li><a href="service-wisdom-teeth.html">Wisdom Teeth</a></li>
+                  <li><a href="service-dental-crowns.html">Dental Crowns</a></li>
               </ul>
               <a class="nav-menu-all" href="services.html">All services <span aria-hidden="true">&#8594;</span></a>
             </div>
@@ -143,109 +143,114 @@
   </div>
 </section>
 
-<!-- ARTICLE LIST WITH CATEGORY FILTER
-     The filter is pure CSS: radio inputs plus labels. It works with and without JavaScript.
-     Radios must remain earlier siblings of .g5-filter-bar and .g5-list. -->
+<!-- ARTICLE LIST: the 9 live posts, newest first, as on omnidentalspecialty.com/blog/ (all in the General category, so there is no filter) -->
 <section class="g5-blog" aria-labelledby="articles-heading">
   <div class="container">
     <h2 class="visually-hidden" id="articles-heading">All articles</h2>
 
-    <div class="g5-filter-wrap" role="group" aria-label="Filter articles by category">
-      <input type="radio" name="g5-cat" id="g5-cat-all" class="g5-filter-input" checked>
-      <input type="radio" name="g5-cat" id="g5-cat-restorative" class="g5-filter-input">
-      <input type="radio" name="g5-cat" id="g5-cat-cosmetic" class="g5-filter-input">
-      <input type="radio" name="g5-cat" id="g5-cat-everyday" class="g5-filter-input">
+    <div class="g5-list">
 
-      <div class="g5-filter-bar">
-        <label class="g5-chip" for="g5-cat-all">All</label>
-        <label class="g5-chip" for="g5-cat-restorative">Restorative</label>
-        <label class="g5-chip" for="g5-cat-cosmetic">Cosmetic</label>
-        <label class="g5-chip" for="g5-cat-everyday">Everyday Care</label>
-      </div>
-
-      <div class="g5-list">
-
-        <!-- Featured article -->
-        <article class="g5-card g5-card--featured" data-cat="restorative">
+        <article class="g5-card g5-card--featured">
           <div class="g5-card-photo">
-            <img src="assets/tooth-casts.jpg" alt="Two plaster models of teeth on a white surface, one with a blue marked tooth" width="800" height="501" loading="eager">
+            <img src="assets/blog/is-your-tooth-pain-a-dental-emergency-hero.jpg" alt="dental emergency pain" width="1000" height="712" loading="eager">
           </div>
           <div class="g5-card-body">
-            <span class="section-eyebrow">Featured Article</span>
-            <span class="g5-tag">Restorative</span>
-            <h3 class="g5-card-title">How Long Do Dental Crowns Last? A Guide for Oxnard Patients</h3>
-            <a href="blog-post.html" class="g5-card-link">Read Article<span class="visually-hidden">: How Long Do Dental Crowns Last? A Guide for Oxnard Patients</span></a>
+            <span class="section-eyebrow">Newest Article</span>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Is Your Tooth Pain a Dental Emergency? A Clinical Guide for Oxnard Residents</h3>
+            <a href="blog-live-is-your-tooth-pain-a-dental-emergency.html" class="g5-card-link">Read Article<span class="visually-hidden">: Is Your Tooth Pain a Dental Emergency? A Clinical Guide for Oxnard Residents</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="restorative">
+        <article class="g5-card">
           <div class="g5-card-photo">
-            <img src="assets/implant-jaw.jpg" alt="Dental teaching model showing teeth with roots set in a gum section" width="800" height="533" loading="lazy">
+            <img src="assets/blog/demystifying-dental-anxiety-what-modern--hero.jpg" alt="dental anxiety" width="1000" height="712" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Restorative</span>
-            <h3 class="g5-card-title">How Long Should You Rest After a Root Canal? A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: How Long Should You Rest After a Root Canal? A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Demystifying Dental Anxiety: What Modern, Gentle Dentistry Actually Feels Like</h3>
+            <a href="blog-live-demystifying-dental-anxiety-what-modern-gentle-dentistry-actually-feels-like.html" class="g5-card-link">Read Article<span class="visually-hidden">: Demystifying Dental Anxiety: What Modern, Gentle Dentistry Actually Feels Like</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="cosmetic">
+        <article class="g5-card">
           <div class="g5-card-photo">
-            <img src="assets/shade-guide.jpg" alt="Row of tooth shade samples on a dark holder" width="800" height="534" loading="lazy">
+            <img src="assets/blog/beyond-the-drill-the-science-of-ct-guide-hero.jpg" alt="dental implants" width="1000" height="712" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Cosmetic</span>
-            <h3 class="g5-card-title">Is Teeth Whitening Worth It? A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: Is Teeth Whitening Worth It? A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Beyond the Drill: The Science of CT-Guided Dental Implants</h3>
+            <a href="blog-live-beyond-the-drill-the-science-of-ct-guided-dental-implants.html" class="g5-card-link">Read Article<span class="visually-hidden">: Beyond the Drill: The Science of CT-Guided Dental Implants</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="cosmetic">
+        <article class="g5-card">
           <div class="g5-card-photo">
-            <img src="assets/waiting-room-sm.jpg" alt="Bright waiting area with a reception counter and blue chairs" width="600" height="400" loading="lazy">
+            <img src="assets/blog/how-advanced-dental-technology-transform-hero.jpg" alt="" width="1000" height="667" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Cosmetic</span>
-            <h3 class="g5-card-title">Does Insurance Cover Cosmetic Dentistry? A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: Does Insurance Cover Cosmetic Dentistry? A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">How Advanced Dental Technology Transforms Patient Care at Omni Dental Oxnard</h3>
+            <a href="blog-live-how-advanced-dental-technology-transforms-patient-care.html" class="g5-card-link">Read Article<span class="visually-hidden">: How Advanced Dental Technology Transforms Patient Care at Omni Dental Oxnard</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="cosmetic">
+        <article class="g5-card">
           <div class="g5-card-photo">
-            <img src="assets/implant-model.jpg" alt="Dental teaching model of teeth and a gum section with a single loose crown beside it" width="800" height="533" loading="lazy">
+            <img src="assets/blog/knocked-out-tooth-emergency-immediate-ac-hero.jpg" alt="" width="1000" height="667" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Cosmetic</span>
-            <h3 class="g5-card-title">Foods to Avoid With Invisalign: A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: Foods to Avoid With Invisalign: A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Knocked-Out Tooth Emergency: Immediate Actions for Saving Your Smile</h3>
+            <a href="blog-live-knocked-out-tooth-emergency-immediate-actions-for-saving-your-smile.html" class="g5-card-link">Read Article<span class="visually-hidden">: Knocked-Out Tooth Emergency: Immediate Actions for Saving Your Smile</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="everyday">
-          <div class="g5-card-photo g5-card-photo--brush">
-            <img src="assets/toothbrush.jpg" alt="Wooden toothbrush with a small dab of toothpaste on a marble surface" width="600" height="900" loading="lazy">
+        <article class="g5-card">
+          <div class="g5-card-photo">
+            <img src="assets/blog/experience-state-of-the-art-cosmetic-den-hero.jpg" alt="" width="1000" height="667" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Everyday Care</span>
-            <h3 class="g5-card-title">What Kind of Toothpaste Helps With Receding Gums? A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: What Kind of Toothpaste Helps With Receding Gums? A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Experience State-of-the-Art Cosmetic Dentistry and Dental Implants in Oxnard for Your Perfect Smile</h3>
+            <a href="blog-live-experience-state-of-the-art-cosmetic-dentistry-and-dental-implants.html" class="g5-card-link">Read Article<span class="visually-hidden">: Experience State-of-the-Art Cosmetic Dentistry and Dental Implants in Oxnard for Your Perfect Smile</span></a>
           </div>
         </article>
 
-        <article class="g5-card" data-cat="everyday">
-          <div class="g5-card-photo g5-card-photo--room">
-            <img src="assets/operatory.jpg" alt="Treatment room with a dental chair, white cabinets and a large window" width="1600" height="1241" loading="lazy">
+        <article class="g5-card">
+          <div class="g5-card-photo">
+            <img src="assets/blog/preventive-dental-care-essential-strateg-hero.jpg" alt="" width="1000" height="667" loading="lazy">
           </div>
           <div class="g5-card-body">
-            <span class="g5-tag">Everyday Care</span>
-            <h3 class="g5-card-title">What to Do When Tooth Pain Becomes Unbearable: A Guide for Oxnard Patients</h3>
-            <a href="#" class="g5-card-link">Read Article<span class="visually-hidden">: What to Do When Tooth Pain Becomes Unbearable: A Guide for Oxnard Patients</span></a>
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Preventive Dental Care: Essential Strategies from Trusted Oxnard Dentist for Optimal Oral Health</h3>
+            <a href="blog-live-preventive-dental-care-essential-strategies.html" class="g5-card-link">Read Article<span class="visually-hidden">: Preventive Dental Care: Essential Strategies from Trusted Oxnard Dentist for Optimal Oral Health</span></a>
+          </div>
+        </article>
+
+        <article class="g5-card">
+          <div class="g5-card-photo">
+            <img src="assets/blog/comprehensive-cosmetic-dentistry-options-hero.jpg" alt="" width="750" height="750" loading="lazy">
+          </div>
+          <div class="g5-card-body">
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Comprehensive Cosmetic Dentistry Options: Transform Your Smile with Expert Dental Care in Oxnard</h3>
+            <a href="blog-live-comprehensive-cosmetic-dentistry-options.html" class="g5-card-link">Read Article<span class="visually-hidden">: Comprehensive Cosmetic Dentistry Options: Transform Your Smile with Expert Dental Care in Oxnard</span></a>
+          </div>
+        </article>
+
+        <article class="g5-card">
+          <div class="g5-card-photo">
+            <img src="assets/blog/treating-your-wisdom-teeth-hero.jpg" alt="" width="1000" height="668" loading="lazy">
+          </div>
+          <div class="g5-card-body">
+            <span class="g5-tag">General</span>
+            <h3 class="g5-card-title">Treating Your Wisdom Teeth</h3>
+            <a href="blog-live-treating-your-wisdom-teeth.html" class="g5-card-link">Read Article<span class="visually-hidden">: Treating Your Wisdom Teeth</span></a>
           </div>
         </article>
 
       </div><!-- /.g5-list -->
-    </div><!-- /.g5-filter-wrap -->
   </div>
 </section>
 
@@ -579,16 +584,16 @@
           <ul role="list" class="footer-treatments-list">
             <li><a href="service-implants.html">Dental Implants</a></li>
             <li><a href="service-general-dentistry.html">General Dentistry</a></li>
-            <li><a href="#">Veneers</a></li>
-            <li><a href="#">Invisalign</a></li>
-            <li><a href="#">Cosmetic Dentistry</a></li>
-            <li><a href="#">Teeth Whitening</a></li>
-            <li><a href="#">Gum Disease Treatment</a></li>
-            <li><a href="#">Root Canal</a></li>
-            <li><a href="#">Emergency Dentistry</a></li>
-            <li><a href="#">TMJ Therapy</a></li>
-            <li><a href="#">Wisdom Teeth</a></li>
-            <li><a href="#">Dental Crowns</a></li>
+            <li><a href="service-veneers.html">Veneers</a></li>
+            <li><a href="service-invisalign.html">Invisalign</a></li>
+            <li><a href="service-cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+            <li><a href="service-teeth-whitening.html">Teeth Whitening</a></li>
+            <li><a href="service-gum-disease-treatment.html">Gum Disease Treatment</a></li>
+            <li><a href="service-root-canal.html">Root Canal</a></li>
+            <li><a href="service-emergency-dentistry.html">Emergency Dentistry</a></li>
+            <li><a href="service-tmj-therapy.html">TMJ Therapy</a></li>
+            <li><a href="service-wisdom-teeth.html">Wisdom Teeth</a></li>
+            <li><a href="service-dental-crowns.html">Dental Crowns</a></li>
           </ul>
           <a href="services.html" class="footer-nav-all-link" aria-label="View all treatments">All Treatments <span aria-hidden="true">&#8594;</span></a>
         </nav>
