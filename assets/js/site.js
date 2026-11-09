@@ -59,8 +59,14 @@
       menuItem.classList.toggle('is-open', open);
       menuToggle.setAttribute('aria-expanded', String(open));
     };
-    menuToggle.addEventListener('click', function () {
-      setMenu(!menuItem.classList.contains('is-open'));
+    /* a mouse click on the chevron of a menu the hover already opened keeps it open;
+       touch and keyboard still toggle */
+    var lastPointer = '';
+    menuToggle.addEventListener('pointerdown', function (e) { lastPointer = e.pointerType; });
+    menuToggle.addEventListener('click', function (e) {
+      var open = menuItem.classList.contains('is-open');
+      if (open && e.detail > 0 && lastPointer === 'mouse') { return; }
+      setMenu(!open);
     });
     menuItem.addEventListener('pointerenter', function (e) {
       if (e.pointerType === 'mouse') { setMenu(true); }
